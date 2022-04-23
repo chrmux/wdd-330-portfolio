@@ -9,5 +9,9 @@ strong {
 }
 
 .theme {
-    display: block;
+    display: none;
+}
+
+li {
+    list-style: none;
 }
