@@ -7,3 +7,7 @@ strong {
     font-size: 100%;
     padding: 20px;
 }
+
+.theme {
+    display: none;
+}
