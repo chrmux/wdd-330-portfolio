@@ -12,7 +12,7 @@ theme.onclick = () => {
 
 var links = [
   {
-    label: "Week1 notes",
+    label: "Week1",
     url: "https://chrmux.github.io/wdd-330-portfolio/notes/index.html"
   },
 
