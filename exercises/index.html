@@ -22,9 +22,51 @@
     <main>
         <strong> Right-click the page and click on “inspect,” go to console tab to see the output.</strong>
 		<ul>
-            <li>Write a JavaScript function that reverse a number.</li>
-            <li>Write a JavaScript function that returns a passed string with letters in alphabetical order.</li>
-            <li>Write a JavaScript function to find the first not repeated character.</li>
+            <li>Write a JavaScript function that reverse a number. <p>function reverse_a_number(n)
+                {
+                    n = n + "";
+                    return n.split("").reverse().join("");
+                }
+                console.log(Number(reverse_a_number(32243)));
+                
+                function alphabet_order(str)
+                  {
+                return str.split('').sort().join('');
+                  }
+                console.log(alphabet_order("webmaster"));
+                </p> </li>
+            <li>Write a JavaScript function that returns a passed string with letters in alphabetical order. 
+                <p>function alphabet_order(str)
+                    {
+                  return str.split('').sort().join('');
+                    }
+                  console.log(alphabet_order("webmaster"));
+                  
+                </p> </li>
+            <li>Write a JavaScript function to find the first not repeated character. 
+                <p>function find_FirstNotRepeatedChar(str) {
+                    var arra1 = str.split('');
+                    var result = '';
+                    var ctr = 0;
+                   
+                    for (var x = 0; x < arra1.length; x++) {
+                      ctr = 0;
+                   
+                      for (var y = 0; y < arra1.length; y++) 
+                      {
+                        if (arra1[x] === arra1[y]) {
+                          ctr+= 1;
+                        }
+                      }
+                   
+                      if (ctr < 2) {
+                        result = arra1[x];
+                        break;
+                      }
+                    }
+                    return result;
+                  }
+                  console.log(find_FirstNotRepeatedChar('abacddbec'));</p> </li>
         </ul>
 	</main>
     <footer>
