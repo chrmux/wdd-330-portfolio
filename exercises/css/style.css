@@ -3,3 +3,10 @@ p{
     height: 250px;
     background-color: lightyellow;
 }
+
+.home {
+    background-color: green;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
