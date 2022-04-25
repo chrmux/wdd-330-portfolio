@@ -14,9 +14,6 @@ li {
 
 .home {
     align-items: center;
-    background-color: green;
     padding: 10px;
-    border-radius: 10px;
     cursor: pointer;
-    list-style: none;
 }
