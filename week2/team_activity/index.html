@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/984100b15b.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://chrmux.github.io/wdd-330-portfolio/css/style.css">
+    <link rel="stylesheet" href="https://chrmux.github.io/wdd-330-portfolio/team_activity/css/style.css">
+
+    <title>WDD 330 Portfolio | Team Activity</title>
+</head>
+
+<body>
+    <div id="theme" class="fa fa-moon"></div>
+    <header>
+        <h1>
+            Team 5
+        </h1>
+    </header>
+    <h2>Core Requirement 1</h2>
+    <input id="coreq1Input" type="text" />
+    <button id="coreq1Button" onclick="coreq1()">Submit</button>
+    <div id="coreq1Output"></div>
+
+    <h2>Core Requirement 2</h2>
+    <input id="coreq2Input" type="text" />
+    <button id="coreq2Button" onclick="coreq2()">Sum</button>
+    <div id="coreq2Output"></div>
+
+    <h2>Core Requirement 3</h2>
+    <input id="coreq3Num1" placeholder="enter a number" type="number" /><input
+      id="coreq3Num2"
+      placeholder="enter a number"
+      type="number"
+    />
+
+    <h2>Stretch Goals</h2>
+    <form>
+        1st Number : <input type="text" id="1stNumber" /><br>
+        2nd Number: <input type="text" id="2ndNumber" /><br>
+        <input type="button" onClick="addBy()" Value="Addition" />
+        <input type="button" onClick="subtractBy()" Value="Subtraction" />
+        <input type="button" onClick="multiplyBy()" Value="Multiply" />
+    </form>
+    <p>The Result is : <br>
+    <span id = "result"></span>
+    </p>
+
+    
+
+    
+    <script src="https://chrmux.github.io/wdd-330-portfolio/team_activity/js/main.js"></script>
+</body>
+</html>

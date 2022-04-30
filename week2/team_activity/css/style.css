@@ -1,0 +1,22 @@
+body {
+    font-size: 22px;
+    position: absolute;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid gray;
+    width: 350px;
+    height: auto;
+    padding: 50px 20px;
+}
+
+input[type="button"]{
+    background-color: black;
+    color: white;
+    margin-top: 5px;
+}
+
+#result {
+    font-size: 26px;
+}
