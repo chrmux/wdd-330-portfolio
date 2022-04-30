@@ -13,7 +13,11 @@ theme.onclick = () => {
 var links = [
   {
     label: "Week1",
-    url: "https://chrmux.github.io/wdd-330-portfolio/notes/index.html"
+    url: "/notes/index.html"
+  },
+  {
+    label: "Week2",
+    url: "/notes/index.html"
   },
 
 ];
@@ -26,3 +30,15 @@ for (var i in links) {
   a.appendChild(li);
   document.querySelector('.content').appendChild(a);
 };
+
+let app = document.querySelector('#app');
+
+let langs = ['TypeScript','HTML','CSS'];
+
+let nodes = langs.map(lang => {
+    let li = document.createElement('li');
+    li.textContent = lang;
+    return li;
+});
+
+app.append(...nodes);
