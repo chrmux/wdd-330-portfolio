@@ -13,13 +13,8 @@ theme.onclick = () => {
 var links = [
   {
     label: "Week1",
-    url: "/notes/index.html"
+    url: "/week1/notes/index.html"
   },
-  {
-    label: "Week2",
-    url: "/notes/index.html"
-  },
-
 ];
 
 for (var i in links) {
