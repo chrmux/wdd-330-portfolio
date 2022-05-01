@@ -13,12 +13,12 @@ theme.onclick = () => {
 var links = [
   {
     label: "Week1",
-    url: "/week1/notes/index.html"
+    url: "https://chrmux.github.io/wdd-330-portfolio/week1/notes/index.html"
   },
 ];
 
 for (var i in links) {
-  var text = document.createElement('text')
+  var text = document.createElement('li')
   var a = document.createElement('a'),
   text = document.createTextNode(links[i].label);
   a.href = links[i].url;
