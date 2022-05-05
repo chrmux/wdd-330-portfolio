@@ -1,0 +1,15 @@
+main {
+    height: 50vh;
+}
+
+h3 {
+    padding-left: 30px;
+}
+
+li, strong {
+    margin: 10px 50px;
+}
+
+.topic {
+    align-items: center;
+}
