@@ -72,14 +72,15 @@ main{
 
 .home a{
     text-align: center;
+    margin-bottom: 50px;
+    list-style: none;
 }
 
 .copy{
     text-align: center;
     font-size: 18px;
     padding: 10px;
-    margin-bottom: 50px;
-    list-style: none;
+    
 }
 
 @media screen and (max-width: 512px) {
