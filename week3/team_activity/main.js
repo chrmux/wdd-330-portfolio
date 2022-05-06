@@ -57,24 +57,24 @@ const inventors = [
     'Blake, William'
   ];
 
-  Array.prototype.filter()
+  //Array.prototype.filter()
   // 1. Filter the list of inventors for those who were born in the 1500's
   var veryOld = inventors.filter(inventor => inventor.year > 1500 && inventor.year < 1599);
   console.log(veryOld);
 
-  Array.prototype.map()
+  //Array.prototype.map()
   // 2. Give us an array of the inventors' first and last names
   var inventorNames = inventors.map(function(inventor) {
       return {first: inventor.first, last: inventor.last}
   })
   console.log(inventorNames);
 
-  Array.prototype.sort()
+  //Array.prototype.sort()
   // 3. Sort the inventors by birthdate, oldest to youngest
   inventors.sort((a,b) => a.year - b.year);
   console.log(inventors);
 
-  Array.prototype.reduce()
+  //Array.prototype.reduce()
   // 4. How many years did all the inventors live?
   const inventorAges = inventors.reduce((acc, curval) => acc + (curval.passed - curval.year), 0);
   console.log(inventorAges)
