@@ -11,10 +11,6 @@ li, strong {
     align-items: center;
 }
 
-ul p {
-    padding-top: 100px;
-}
-
 .home a {
     display: block;
     text-align: center;
