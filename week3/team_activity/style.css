@@ -10,3 +10,14 @@ li, strong {
 .topic {
     align-items: center;
 }
+
+ul p {
+    padding-top: 100px;
+}
+
+.home a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    padding-top: 100px;
+}
