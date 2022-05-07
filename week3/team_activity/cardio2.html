@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/984100b15b.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://chrmux.github.io/wdd-330-portfolio/css/style.css">
+    <link rel="stylesheet" href="https://chrmux.github.io/wdd-330-portfolio/week3/team_activity/style.css">
+    <title>WDD 330 Portfolio | Week03</title>
+</head>
+<body>
+    <div id="theme" class="fa fa-moon"></div>
+    <header>
+    	<h1>
+    		Array Cardio 2 💪
+    	</h1>
+    </header>
+    <main>
+        <div class="team_activity">
+            <h3>W03 Team Activity</h3>
+        </div>
+        <p>Right-click the page and click on “inspect,” go to console tab to see the output.</p>
+        <script>
+
+const people = [
+    { name: 'Wes', year: 1988 },
+    { name: 'Kait', year: 1986 },
+    { name: 'Irv', year: 1970 },
+    { name: 'Lux', year: 2015 }
+  ];
+
+  const comments = [
+    { text: 'Love this!', id: 523423 },
+    { text: 'Super good', id: 823423 },
+    { text: 'You are the best', id: 2039842 },
+    { text: 'Ramen is my fav food ever', id: 123523 },
+    { text: 'Nice Nice Nice!', id: 542328 }
+  ];
+
+  // Some and Every Checks
+  // Array.prototype.some() // is at least one person 19 or older?
+  const isAdult = people.some(person => ((new Date()).
+    getFullYear()) - person.year >= 19 );
+
+  console.log(isAdult);
+  // Array.prototype.every() // is everyone 19 or older?
+
+  const allAdult = people.some(person => ((new Date()).
+    getFullYear()) - person.year >= 19 );
+
+  console.log(allAdult)
+
+  // Array.prototype.find()
+  // Find is like filter, but instead returns just the one you are looking for
+  // find the comment with the ID of 823423
+
+  const comment = comments.find(function(comment) {
+    if(comment.id === 823423) {
+      return true;
+    }
+  });
+  console.log(comment);
+
+
+  // Array.prototype.findIndex()
+  // Find the comment with this ID
+  // delete the comment with the ID of 823423
+
+  const index = comments.findIndex(comment => comment.id === 823423);
+  console.log(index)
+
+  // comments.splice(index, 1);
+
+  const newComments = [
+    ...comments.splice(0, index),
+    ...comments.splice(index + 1)
+  ];
+        </script>
+        <div class="home">
+            <a href="https://chrmux.github.io/wdd-330-portfolio/index.html">Back to Home</a>
+        </div>	
+    </main>
+    <footer>
+        <div class="copy">
+            <span>&copy 2022 - Jerry Marollano -</span>
+        </div>
+    </footer>
+    <script src="https://chrmux.github.io/wdd-330-portfolio/js/theme.js"></script>
+</body>
+</html>
+
