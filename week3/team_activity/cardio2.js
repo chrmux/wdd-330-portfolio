@@ -43,4 +43,9 @@ const people = [
   const index = comments.findIndex(comment => comment.id === 823423);
   console.log(index)
 
-  comments.splice(index, 1);
+  // comments.splice(index, 1);
+
+  const newComments = [
+    ...comments.splice(0, index),
+    ...comments.splice(index + 1)
+  ];
