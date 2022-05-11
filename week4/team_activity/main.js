@@ -1,36 +1,37 @@
-// Core Requirements
-const reset = document.getElementById('reset');
-const cells = document.querySelectorAll('.cell');
-const divBoard = document.forms.ticTac;
-const player1 = {name: "player1", sign: "X"};
-const player2 = {name: "player2", sign: "0"};
-let player = player1;
-
-document.getElementById("currentPlayer").innerHTML = player.name;
-
-const getId = (e) => {
-  let cellName = e.target;
-  document.getElementById("currentPlayer").innerHTML = player.name;
-  cellName.innerHTML = player.sign;
-  if (player == player1) player = player2;
-  else player = player1;
-}
-  // console.log(e.target);
-
-divBoard.addEventListener('click', getId);
-
-
-// 03
-// Add a reset button.
-// When touched the reset button should remove all of the marks from the board.
-
-
-const resetBoard = (e) =>  {
-  e.preventDefault();
-  document.getElementById("currentPlayer").innerHTML = player1.name;
-  cells.forEach((c) => {
-    c.innerHTML = '';
-  });
-}
-
-reset.addEventListener('click', resetBoard, false);
+const board = document.querySelector('.board');
+      const divBoard = document.querySelector('.divBoard');
+      const resetButton = document.getElementById('reset');
+      const player1 = 'X';
+      const player2 = 'O';
+      let player = player1;
+      function addPiece(e) {
+        console.log(e.target);
+        e.target.innerHTML = player;
+        if (player === player1) player = player2;
+        else player = player1;
+      }
+      // table version
+      function resetBoard() {
+        console.dir(board);
+        for (let i = 0; i < board.rows.length; i++) {
+          let row = board.rows[i];
+          for (let j = 0; j < row.cells.length; j++) {
+            row.cells[j].innerHTML = '';
+          }
+        }
+      }
+      // div version
+      function resetBoardDiv() {
+        const divBoard = document.querySelector('.divBoard');
+        for (let i = 0; i < divBoard.children.length; i++) {
+          divBoard.children[i].innerText = '';
+        }
+        const children = Array.from(divBoard.children);
+        const empty = children.filter(function(child) {
+          return child.innerText == 'X' || child.innerText == 'O';
+        });
+        console.log(empty);
+      }
+      board.addEventListener('click', addPiece);
+      divBoard.addEventListener('click', addPiece);
+      reset.addEventListener('click', resetBoardDiv);
