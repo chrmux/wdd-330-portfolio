@@ -52,24 +52,24 @@
             <p class="temperature">
                 class Temperature {
   constructor(celsius) {
-    this.celsius = celsius;
-  }
-  get fahrenheit() {
-    return this.celsius * 1.8 + 32;
-  }
-  set fahrenheit(value) {
-    this.celsius = (value - 32) / 1.8;
-  }
+    <br> this.celsius = celsius;
+  <br>}
+  <br>get fahrenheit() {
+    <br> return this.celsius * 1.8 + 32;
+    <br>}
+    <br>set fahrenheit(value) {
+        <br>this.celsius = (value - 32) / 1.8;
+        <br>}
 
-  static fromFahrenheit(value) {
-    return new Temperature((value - 32) / 1.8);
-  }
-}
+        <br>static fromFahrenheit(value) {
+            <br>return new Temperature((value - 32) / 1.8);
+            <br>}
+            <br>}
 
-let temp = new Temperature(22);
-console.log(temp.fahrenheit);
-temp.fahrenheit = 86;
-console.log(temp.celsius);
+            <br>let temp = new Temperature(22);
+            <br>console.log(temp.fahrenheit);
+            <br>temp.fahrenheit = 86;
+            <br>console.log(temp.celsius);
             </p>
             <ul>
                 <li><a href="https://chrmux.github.io/wdd-330-portfolio/week4/exercises/index.html">Click to see the result</a></li>
