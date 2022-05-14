@@ -22,4 +22,4 @@ function resetBoard() {
 }
 
 board.addEventListener('click', addPiece);
-reset.addEventListener('click', resetBoardDiv);
+reset.addEventListener('click', resetBoard);
