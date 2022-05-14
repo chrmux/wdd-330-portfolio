@@ -2,8 +2,6 @@
 .board {
   width: 320px;
   height: 320px;
-  display: block;
-  align-items: center;
 }
 .board td,
 .board tr {
