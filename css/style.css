@@ -65,7 +65,9 @@ li {
     margin-left: 50px;
 }
 
-
+strong {
+    padding-left: 70px;
+}
 main{
     padding: 10px;
 }
