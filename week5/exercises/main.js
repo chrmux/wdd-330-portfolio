@@ -1,43 +1,39 @@
-var accounts = {
-    a: 100,
-    b: 0,
-    c: 20
+const box = {
+    locked: true,
+    unlock() { this.locked = false; },
+    lock() { this.locked = true;  },
+    _content: [],
+    get content() {
+      if (this.locked) throw new Error("Locked!");
+      return this._content;
+    }
   };
   
-  function getAccount() {
-    let accountName = prompt("Enter an account name");
-    if (!accounts.hasOwnProperty(accountName)) {
-      throw new Error(`No such account: ${accountName}`);
+  function withBoxUnlocked(body) {
+    let locked = box.locked;
+    if (!locked) {
+      return body();
     }
-    return accountName;
-  }
   
-  function transfer(from, amount) {
-    if (accounts[from] < amount) return;
-    accounts[from] -= amount;
-    accounts[getAccount()] += amount;
-  }
-  
-  function transfer(from, amount) {
-    if (accounts[from] < amount) return;
-    let progress = 0;
+    box.unlock();
     try {
-      accounts[from] -= amount;
-      progress = 1;
-      accounts[getAccount()] += amount;
-      progress = 2;
+      return body();
     } finally {
-      if (progress == 1) {
-        accounts[from] += amount;
-      }
+      box.lock();
     }
   }
   
-  var InputError = class InputError extends Error {}
+  withBoxUnlocked(function() {
+    box.content.push("gold piece");
+  });
   
-  function promptDirection(question) {
-    let result = prompt(question);
-    if (result.toLowerCase() == "left") return "L";
-    if (result.toLowerCase() == "right") return "R";
-    throw new InputError("Invalid direction: " + result);
+  try {
+    withBoxUnlocked(function() {
+      throw new Error("Pirates on the horizon! Abort!");
+    });
+  } catch (e) {
+    console.log("Error raised:", e);
   }
+  
+  console.log(box.locked);
+  // → true
