@@ -27,7 +27,7 @@ function displayEntry(todo) {
 
     var spanIconComplete = document.createElement("span");
     spanIconComplete.setAttribute('class', 'material-icons');
-    spanIconComplete.innerText = "check_box_outline_blank";
+    spanIconComplete.innerText = "check box";
     spanIconComplete.setAttribute("id", "iconFor"+todo.id)
     spanIconComplete.myParam = todo.id;
     
@@ -37,7 +37,7 @@ function displayEntry(todo) {
 
     var endBtn = document.createElement('span');
     endBtn.setAttribute('class', 'material-icons');
-    endBtn.innerText = "delete_forever";
+    endBtn.innerText = "delete";
     endBtn.addEventListener('click', deleteTask, false);
     endBtn.myParam = todo.id;
     

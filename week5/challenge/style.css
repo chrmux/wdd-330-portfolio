@@ -55,3 +55,8 @@
   .completed {
   background-color: rgb(148, 221, 148);
   }
+
+  span {
+    border: 1px solid #555;
+    padding: 7px;
+  }
