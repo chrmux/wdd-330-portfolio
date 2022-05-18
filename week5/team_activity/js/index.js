@@ -1,4 +1,4 @@
-import HikesController from './HikesController.js';
+import HikesController from 'https://chrmux.github.io/wdd-330-portfolio/week5/team_activity/js/HikesController.js';
 
 let controller = new HikesController('hikes');
 controller.showHikeList();

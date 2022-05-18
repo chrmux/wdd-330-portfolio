@@ -1,5 +1,5 @@
-import HikeModel from './HikeModel.js';
-import HikesView from './HikesView.js';
+import HikeModel from 'https://chrmux.github.io/wdd-330-portfolio/week5/team_activity/js/HikeModel.js';
+import HikesView from 'https://chrmux.github.io/wdd-330-portfolio/week5/team_activity/js/HikesView.js';
 
 export default class HikesController {
     constructor(parentId){
