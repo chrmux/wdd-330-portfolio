@@ -35,12 +35,6 @@ const hikeList = [
   ];
 
   console.log(hikeList);
-
-  export default class Hikes {
-    constructor() {
-      
-    }
-  }
   
   const imgBasePath = "//byui-cit.github.io/cit261/examples/";
   //on load grab the array and insert it into the page
