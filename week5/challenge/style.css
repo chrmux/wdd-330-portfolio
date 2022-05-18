@@ -1,4 +1,7 @@
 .container {
+    display: block;
+    justify-content: center;
+    justify-items: center;
     width: 85%;
     margin: auto;
     border: 1px solid gray;
@@ -25,7 +28,7 @@
   
   }
   
-  .square {
+  .square, .task, .end {
     height: 15px;
     width: 15px;
     border: 1px solid #555;
@@ -55,9 +58,4 @@
   
   .completed {
   background-color: rgb(148, 221, 148);
-  }
-
-  span {
-    border: 1px solid #555;
-    padding: 7px;
   }
