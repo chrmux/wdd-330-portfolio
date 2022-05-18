@@ -118,6 +118,7 @@ async function startUp() {
         });
     } else {
         // ADD A message to add a todo!
+        "Task Added"
     }
 
 }
