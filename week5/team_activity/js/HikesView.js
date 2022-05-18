@@ -3,7 +3,7 @@ const imgBasePath = '//byui-cit.github.io/cit261/examples/';
 export default class HikesView {
     constructor(listElementId){
         //gonna do more
-        //this.imgBasePath = '//byui-cit.github.io/cit261/examples/';
+        this.imgBasePath = '//byui-cit.github.io/cit261/examples/';
     }
 
 
