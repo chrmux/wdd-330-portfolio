@@ -24,7 +24,7 @@ li.active {
         right: 25px;
         padding: 15px 20px;
         font-size: 30px;
-        background: #fff;
+        background: transparent;
         color: #000;
         cursor: pointer;
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
@@ -45,7 +45,7 @@ h1 {
 
 h2 {
     font-size: 32px;
-    padding-left: 20px;
+    padding-left: 10px;
 }
 
 h3 {
@@ -53,7 +53,7 @@ h3 {
 }
 
 p {
-    padding-left: 60px;
+    padding-left: 40px;
 }
 
 ol{
@@ -62,11 +62,11 @@ ol{
 
 li {
     color: #000;
-    margin-left: 50px;
+    margin-left: 30px;
 }
 
 strong {
-    padding-left: 70px;
+    padding-left: 40px;
 }
 main{
     padding: 10px;
@@ -97,6 +97,6 @@ main{
     }
 
     #theme {
-        font-size: 75%;
+        font-size: 65%;
     }
 }
