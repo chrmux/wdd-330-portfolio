@@ -1,5 +1,3 @@
-// Example of using Classes and modules to organize the code needed to render our list of hikes. Not using MVC here.
-
 //create an array of hikes
 const hikeList = [
     {
@@ -44,7 +42,7 @@ const hikeList = [
       // we need a back button to return back to the list. This will build it and hide it. When we need it we just need to remove the 'hidden' class
       this.backButton = this.buildBackButton();
     }
-    // why is this function necessary?  hikeList is not exported, and so it cannot be seen outside of this module. I added this in case I ever need the list of hikes outside of the module. This also sets me up nicely if my data were to move. I can just change this method to the new source and everything will still work if I only access the data through this getter.
+    // hikeList is not exported, and so it cannot be seen outside of this module.
     getAllHikes() {
       return hikeList;
     }
@@ -75,7 +73,6 @@ const hikeList = [
       const childrenArray = Array.from(this.parentElement.children);
       childrenArray.forEach(child => {
         child.addEventListener('touchend', e => {
-          // why currentTarget instead of target?
           this.showOneHike(e.currentTarget.dataset.name);
         });
       });
@@ -101,7 +98,6 @@ const hikeList = [
   function renderOneHikeLight(hike) {
     const item = document.createElement('li');
     item.classList.add('light');
-    // setting this to make getting the details for a specific hike easier later.
     item.setAttribute('data-name', hike.name);
     item.innerHTML = ` <h4>${hike.name}</h4>
   <div class="image"><img src="${imgBasePath}${hike.imgSrc}" alt="${hike.imgAlt}"></div>
