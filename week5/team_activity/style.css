@@ -2,15 +2,17 @@ img {
     max-width: 30%;
     height: auto;
     float: left;
+    padding: 20px;
   }
   .hike{
       width:100%;
-      height:400px;
+      height:500px;
   }
   h2 {
     text-align: center;
     background-color: aqua;
     border: black solid;
+    padding-left: 10px;
   }
   .details{
       float: right;
