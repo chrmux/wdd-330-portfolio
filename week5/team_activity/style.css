@@ -3,7 +3,7 @@ img {
     height: auto;
     float: left;
     overflow: hidden;
-    margin-bottom: 5px;
+    padding: 10px;
   }
   .hike{
       width:100%;
