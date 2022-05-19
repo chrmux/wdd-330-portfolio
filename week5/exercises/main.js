@@ -10,6 +10,7 @@ const box = {
   };
   
   function withBoxUnlocked(body) {
+    // Your code here.
     let locked = box.locked;
     if (!locked) {
       return body();
@@ -36,4 +37,3 @@ const box = {
   }
   
   console.log(box.locked);
-  // → true

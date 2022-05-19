@@ -103,7 +103,7 @@ const hikeList = [
     item.classList.add('light');
     // setting this to make getting the details for a specific hike easier later.
     item.setAttribute('data-name', hike.name);
-    item.innerHTML = ` <h2>${hike.name}</h2>
+    item.innerHTML = ` <h4>${hike.name}</h4>
   <div class="image"><img src="${imgBasePath}${hike.imgSrc}" alt="${hike.imgAlt}"></div>
   <div>
           <div>
@@ -123,7 +123,7 @@ const hikeList = [
     item.innerHTML = ` 
       
           <img src="${imgBasePath}${hike.imgSrc}" alt="${hike.imgAlt}">
-          <h2>${hike.name}</h2>
+          <h4>${hike.name}</h4>
           <div>
               <h3>Distance</h3>
               <p>${hike.distance}</p>
