@@ -16,3 +16,6 @@ img {
       float: right;
 
   }
+  li {
+    list-style: none;
+  }
