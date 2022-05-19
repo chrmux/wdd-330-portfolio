@@ -99,7 +99,7 @@ const hikeList = [
     const item = document.createElement('li');
     item.classList.add('light');
     item.setAttribute('data-name', hike.name);
-    item.innerHTML = ` <h4>${hike.name}</h4>
+    item.innerHTML = ` <h2>${hike.name}</h2>
   <div class="image"><img src="${imgBasePath}${hike.imgSrc}" alt="${hike.imgAlt}"></div>
   <div>
           <div>
