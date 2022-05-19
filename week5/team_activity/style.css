@@ -2,6 +2,8 @@ img {
     max-width: 30%;
     height: auto;
     float: left;
+    overflow: hidden;
+    margin-bottom: 5px;
   }
   .hike{
       width:100%;
