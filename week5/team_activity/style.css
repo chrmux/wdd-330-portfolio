@@ -16,6 +16,11 @@ img {
       float: right;
 
   }
-  li {
+  ul li {
     list-style: none;
+  }
+  .light {
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
   }
