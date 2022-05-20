@@ -35,6 +35,7 @@ const hikeList = [
   ];
   
   const imgBasePath = '//byui-cit.github.io/cit261/examples/';
+  //on load grab the array and insert it into the page on load
   
   export default class Hikes {
     constructor(elementId) {
@@ -44,9 +45,11 @@ const hikeList = [
     getAllHikes() {
       return hikeList;
     }
+    // For the first stretch we will need to get just one hike.
     getHikeByName(hikeName) {
       return this.getAllHikes().find(hike => hike.name === hikeName);
     }
+    //show a list of hikes in the parentElement
     showHikeList() {
       this.parentElement.innerHTML = '';
       renderHikeList(this.parentElement, this.getAllHikes());
@@ -60,6 +63,7 @@ const hikeList = [
       this.backButton.classList.remove('hidden');
     }
     addHikeListener() {
+      // in order to show the details of a hike ontouchend we will need to attach a listener AFTER the list of hikes has been built. The function below does that.
       const childrenArray = Array.from(this.parentElement.children);
       childrenArray.forEach(child => {
         child.addEventListener('touchend', e => {
