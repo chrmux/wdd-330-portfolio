@@ -1,6 +1,6 @@
 img {
     max-width: 30%;
-    height: 300px;
+    height: 280px;
     float: left;
   }
   .hike{
@@ -10,7 +10,7 @@ img {
   h2 {
     text-align: center;
     background-color: aqua;
-    border: 1px solid black ;
+    border: solid black ;
   }
   .details{
       float: right;
