@@ -10,7 +10,7 @@ img {
   h2 {
     text-align: center;
     background-color: aqua;
-    border: black solid;
+    border: 1px solid black ;
   }
   .details{
       float: right;
