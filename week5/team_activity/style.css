@@ -2,7 +2,6 @@ img {
     max-width: 30%;
     height: auto;
     float: left;
-    padding: 20px;
   }
   .hike{
       width:100%;
@@ -12,7 +11,6 @@ img {
     text-align: center;
     background-color: aqua;
     border: black solid;
-    padding-left: 10px;
   }
   .details{
       float: right;
@@ -21,4 +19,6 @@ img {
 
   ul li {
     list-style: none;
+    padding: 0;
+
   }
