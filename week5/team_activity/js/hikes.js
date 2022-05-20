@@ -66,7 +66,7 @@ const hikeList = [
       // in order to show the details of a hike ontouchend we will need to attach a listener AFTER the list of hikes has been built. The function below does that.
       const childrenArray = Array.from(this.parentElement.children);
       childrenArray.forEach(child => {
-        child.addEventListener('touchend', e => {
+        child.addEventListener('click', e => {
           this.showOneHike(e.currentTarget.dataset.name);
         });
       });
@@ -74,7 +74,7 @@ const hikeList = [
     buildBackButton() {
       const backButton = document.createElement('button');
       backButton.innerHTML = '⬅️ All Hikes';
-      backButton.addEventListener('touchend', () => {
+      backButton.addEventListener('click', () => {
         this.showHikeList();
       });
       backButton.classList.add('hidden');
