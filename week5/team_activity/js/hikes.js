@@ -101,7 +101,7 @@ const hikeList = [
     item.setAttribute('data-name', hike.name);
     item.innerHTML = ` <h2>${hike.name}</h2>
   <div class="image"><img src="${imgBasePath}${hike.imgSrc}" alt="${hike.imgAlt}"></div>
-  <div>
+  <div class="details">
           <div>
               <h3>Distance</h3>
               <p>${hike.distance}</p>
@@ -109,6 +109,10 @@ const hikeList = [
           <div>
               <h3>Difficulty</h3>
               <p>${hike.difficulty}</p>
+          </div>
+          <div>
+              <h3>Description</h3>
+              <p>${hike.description}</p>
           </div>
   </div>`;
   
