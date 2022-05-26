@@ -27,7 +27,7 @@ function displayEntry(todo) {
 
     var spanIconComplete = document.createElement("span");
     spanIconComplete.setAttribute('class', 'material-icons');
-    spanIconComplete.innerText = "check box";
+    spanIconComplete.innerHTML = "☐";
     spanIconComplete.setAttribute("id", "iconFor"+todo.id)
     spanIconComplete.myParam = todo.id;
     
@@ -43,10 +43,13 @@ function displayEntry(todo) {
     
     if (todo.completed){
         todoItemDiv.classList.add("completed");
-        spanIconComplete.innerText = "check_box";
+        spanIconComplete.innerHTML = "✔️";
+        
+
     } else {
         spanIconComplete.addEventListener('click', completeTask, false);
     }
+
     
     todoItemDiv.appendChild(spanIconComplete);
     todoItemDiv.appendChild(taskDiv);
@@ -55,11 +58,10 @@ function displayEntry(todo) {
     document.getElementsByClassName('todoList')[0].appendChild(todoItemDiv);
 
 }
-
 async function completeTask(evt) {
 
     document.getElementById(evt.currentTarget.myParam).classList.add("completed");
-    document.getElementById("iconFor"+evt.currentTarget.myParam).innerText = "check_box";
+    document.getElementById("iconFor"+evt.currentTarget.myParam).innerText = "✔️";
     var entries = await getEntries();
     
     var stutus = entries.findIndex(entry => entry.id === evt.currentTarget.myParam);
@@ -118,24 +120,24 @@ async function startUp() {
         });
     } else {
         // ADD A message to add a todo!
-        "Task Added"
     }
 
 }
 
 function displayCount(count) {
     // Reset the html to be empty, may not need this
-    var taskCount = document.getElementsByClassName('count')[0];
+    var taskCount = document.getElementsByClassName('count');
     taskCount.innerHTML = '';
 
-    if (count === 1) {
-        taskCount.innerText = count + " Task Left!"
+    if (count.length) {
+        taskCount.innerText = count + "📝 Task Left!"
     } else {
-        taskCount.innerText = count + " Tasks Left"
+        taskCount.innerText = count + "📝 Tasks Left"
 
     }
+   
+  }
     
-}
 
 function showError() {
     document.getElementById('err').innerText = "You need to enter some text!"

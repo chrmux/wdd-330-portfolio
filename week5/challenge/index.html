@@ -9,7 +9,7 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://chrmux.github.io/wdd-330-portfolio/css/style.css">
     <link rel="stylesheet" href="https://chrmux.github.io/wdd-330-portfolio/week4/team_activity/style.css">
-
+    <link rel="stylesheet" href="https://chrmux.github.io/wdd-330-portfolio/week5/challenge/style.css">
     <title>exercises | Week05</title>
 </head>
 
@@ -22,25 +22,22 @@
     </header>
     <main>
         <div class="container">
+            <div id="err"></div>
             <div class="entry">
-                <input type="text" name="Todo Entry" id="todoEntry" placeholder="Add a Task Here!"><button onclick="addTodo()">+</button>
+                <input type="text" name="Todo Entry" id="todoEntry" placeholder="Add a Task Here!"><button onclick="addTodo()">+ADD</button>
             </div>
             <div class="todoList">
-                <div class="todoItem">
-                    <div class="square"></div>
-                    <div class="task">TEST</div>
-                    <button class="end">X</button>
-                </div>
             </div>
             <div class="footerContainer">
-                <div class="count"></div>
+                <div class="count">
                 <div class="actionBtns">
                     <button class="actionButton" onclick="startUp()">All</button>
                     <button class="actionButton" onclick="activeTodos()">Active</button>
                     <button class="actionButton" onclick="completedTodos()">Completed</button>
                 </div>
+                </div>
             </div>
-            <div id="err"></div>
+            
         </div>
         <div class="home">
             <a href="https://chrmux.github.io/wdd-330-portfolio/index.html">Back to Home</a>
@@ -53,7 +50,6 @@
     </footer>
     <script src="https://chrmux.github.io/wdd-330-portfolio/js/theme.js"></script>
     <script src="https://chrmux.github.io/wdd-330-portfolio/week5/challenge/index.js"></script>
-    <script src="https://chrmux.github.io/wdd-330-portfolio/week5/challenge/js/todo.js"></script>
 
 
 </body>

@@ -1,61 +1,93 @@
+
+input {
+  border: 1px solid black;
+  border-radius: 0;
+  width: 100%;
+  padding: 10px;
+  margin-right: 10px;
+  font-size: 20px;
+}
+
 .container {
-    display: block;
-    justify-content: center;
-    justify-items: center;
-    width: 85%;
-    margin: auto;
-    border: 1px solid gray;
-  }
-  
-  .entry {
-    margin-top: 5%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .entry input {
-    width: 100%;
-    font-size: 20px;
-  }
-  
-  .entry button {
-    width: 35%;
-    font-size: 20px;
-    color: black;
-    background-color: rgb(148, 221, 148);
-    border: 1px solid black;
-  
-  }
-  
-  .square, .task, .end {
-    height: 15px;
-    width: 15px;
-    border: 1px solid #555;
-  }
-  
-  .todoItem {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-    padding: 7px;
-    border: solid 1px black;
-  }
-  
-  
-  .footerContainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-  }
-  .actionBtns {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 7px;
-  }
-  
-  .completed {
+  width: 70%;
+  margin: auto;
+  border: 1px solid gray;
+  padding: 10px;
+}
+
+.entry {
+  margin-top: 5%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.entry button {
+  width: 25%;
+  font-size: 20px;
+  color: black;
   background-color: rgb(148, 221, 148);
-  }
+  border: solid 1px black;
+
+}
+
+.todoEntry {
+  border: 1px solid gray;
+}
+
+.todoItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 98%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border: solid 1px black;
+}
+
+.count {
+  color: black;
+  line-height: 7px;
+}
+
+.footerContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.actionBtns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 7px;
+  margin: 10px;
+}
+
+.actionBtns button{
+  margin: 10px;
+  line-height: 7px;
+  padding: 7px;
+  font-size: 20px;
+}
+
+.iconFor {
+cursor: pointer;
+}
+
+.material-icons {
+  cursor: pointer;
+}
+
+.completed {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.err {
+  display: block;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  text-align: center;
+}
