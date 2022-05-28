@@ -1,4 +1,4 @@
-import addTodo from 'util.js';
+import addTodo from './utilutil.js';
 import DefaultExport from 'bar.js';
 
 class TodoItem {
