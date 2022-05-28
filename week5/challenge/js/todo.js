@@ -1,3 +1,6 @@
+import addTodo from 'util.js';
+import DefaultExport from 'bar.js';
+
 class TodoItem {
     constructor(task) {
         this.id = Date.now();

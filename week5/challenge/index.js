@@ -7,7 +7,6 @@ class TodoItem {
 }
 
 function addTodo() {
-    // Get the entry
     var todoEntry = document.getElementById("todoEntry").value;
     
     if (todoEntry !== '') {
@@ -68,7 +67,7 @@ async function completeTask(evt) {
     entries[stutus].completed = true
 
   
-    localStorage.setItem('testC', JSON.stringify(entries));
+    localStorage.setItem('test', JSON.stringify(entries));
 }
 
 async function deleteTask(evt) {
@@ -81,7 +80,7 @@ async function deleteTask(evt) {
 
     var updatedTasks = entries.filter(entry => entry !== deleteable);
 
-    localStorage.setItem('testC', JSON.stringify(updatedTasks));
+    localStorage.setItem('test', JSON.stringify(updatedTasks));
 }
 
 async function saveEntry(entry) {
@@ -94,11 +93,11 @@ async function saveEntry(entry) {
     entries.push(todoEntry);
     console.log(entries);
 
-    localStorage.setItem('testC', JSON.stringify(entries));
+    localStorage.setItem('test', JSON.stringify(entries));
 }
 
 async function getEntries() {
-    var entries = await JSON.parse(localStorage.getItem('testC'));
+    var entries = await JSON.parse(localStorage.getItem('test'));
     if (entries !== null) {
         return entries;
     } else {
@@ -119,13 +118,11 @@ async function startUp() {
             displayEntry(todo);
         });
     } else {
-        // ADD A message to add a todo!
     }
 
 }
 
 function displayCount(count) {
-    // Reset the html to be empty, may not need this
     var taskCount = document.getElementsByClassName('count');
     taskCount.innerHTML = '';
 
@@ -140,12 +137,11 @@ function displayCount(count) {
     
 
 function showError() {
-    document.getElementById('err').innerText = "You need to enter some text!"
+    document.getElementById('err').innerText = "Enter some text!"
     setTimeout(function(){ document.getElementById('err').innerText = '' }, 3000);
 }
 
 
-// Footer filters 
 async function activeTodos() {
     document.getElementsByClassName('todoList')[0].innerHTML = '';
     var todos = await getEntries();
@@ -172,6 +168,5 @@ async function completedTodos() {
         });
     }
 }
-
 
 startUp();
