@@ -1,7 +1,3 @@
-.hikes {
-  padding: 10px;
-}
-
 img {
   max-width: 40%;
   height: 180px;
@@ -9,11 +5,11 @@ img {
 }
 .hikeStyles{
     width:85%;
-    height:780px;
+    height:800px;
 }
 h2 {
   text-align: center;
-  background-color: aquamarine;
+  background-color: aqua;
   border: solid black ;
 }
 .details{
@@ -27,32 +23,19 @@ ul li {
 
 
   #comments {
-    display: flex;
-        flex-direction: column;
-        justify-content: center;
-        justify-items: center;
-        align-items: center;
+        padding: 0.5em;
+      }
+      .addComment > h2 {
         text-align: center;
-      }
-      .addComment, .comment {
-        width: 80%;
-      }
-      .addComment > h2 {       
         background-color: tomato;
       }
       .addComment input {
-        width: 80%;
+        width: 93%;
         border: 1px solid;
         font-size: 1.2em;
       }
       .addComment button {
         padding: 0.5em;
         border: 1px solid;
-      }
-      .comments{
-        background-color: #fff;
-        border: 1px solid gray;
-        padding: 10px;
-
       }
 
