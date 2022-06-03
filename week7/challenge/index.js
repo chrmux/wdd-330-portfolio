@@ -1,8 +1,8 @@
 class TodoItem {
     constructor(task) {
-        name: '',
-        date: new Date(),
-        content: comment
+        this.id = Date.now();
+        this.content = task;
+        this.completed = false;
     }
 }
 
@@ -168,5 +168,7 @@ async function completedTodos() {
         });
     }
 }
+
+
 
 startUp();

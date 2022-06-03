@@ -1,3 +1,4 @@
+import Comments from './comments.js';
 //create an array of hikes
 const hikeList = [
     {
@@ -41,6 +42,7 @@ const hikeList = [
     constructor(elementId) {
       this.parentElement = document.getElementById(elementId);
       this.backButton = this.buildBackButton();
+      this.comments = new Comments('hikes', 'comments');
     }
     getAllHikes() {
       return hikeList;
@@ -55,12 +57,14 @@ const hikeList = [
       renderHikeList(this.parentElement, this.getAllHikes());
       this.addHikeListener();
       this.backButton.classList.add('hidden');
+      this.comments.showCommentList();
     }
     showOneHike(hikeName) {
       const hike = this.getHikeByName(hikeName);
       this.parentElement.innerHTML = '';
       this.parentElement.appendChild(renderOneHikeFull(hike));
       this.backButton.classList.remove('hidden');
+      this.comments.showCommentList(hikeName);
     }
     addHikeListener() {
       // in order to show the details of a hike ontouchend we will need to attach a listener AFTER the list of hikes has been built. The function below does that.
@@ -93,12 +97,12 @@ const hikeList = [
     item.setAttribute('data-name', hike.name);
     item.innerHTML = ` <h2>${hike.name}</h2>
   <div class="image"><img src="${imgBasePath}${hike.imgSrc}" alt="${hike.imgAlt}"></div>
-  <div class="list">
-          <div class="details">
+  <div>
+          <div>
               <h3>Distance</h3>
               <p>${hike.distance}</p>
           </div>
-          <div class="details">
+          <div>
               <h3>Difficulty</h3>
               <p>${hike.difficulty}</p>
           </div>
@@ -116,7 +120,7 @@ const hikeList = [
               <h3>Distance</h3>
               <p>${hike.distance}</p>
           </div>
-          <div >
+          <div>
               <h3>Difficulty</h3>
               <p>${hike.difficulty}</p>
           </div>
@@ -132,4 +136,3 @@ const hikeList = [
       `;
     return item;
   }
-  

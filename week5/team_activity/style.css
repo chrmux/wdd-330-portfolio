@@ -1,11 +1,11 @@
 img {
     max-width: 40%;
-    height: 180px;
+    height: 200px;
     float: left;
   }
-  .hike{
-      width:100%;
-      height:700px;
+  .hikeStyles{
+      width:85%;
+      height:900px;
   }
   h2 {
     text-align: center;
@@ -13,12 +13,12 @@ img {
     border: solid black ;
   }
   .details{
-      float: right;
-
+      margin: 10px;
   }
 
   ul li {
     list-style: none;
 
   }
+
 
