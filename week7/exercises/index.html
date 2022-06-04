@@ -61,6 +61,16 @@
                 </code>
             <li><strong>Code-4:</strong> Dominant writing direction</li>
                 <code class="code">
+                    function dominantDirection(text) {
+                        <br>let counted = countBy(text, char => {
+                            <br>let script = characterScript(char.codePointAt(0));
+                            <br>return script ? script.direction : "none";
+                            <br>}).filter(({name}) => name != "none");
+                      
+                            <br>if (counted.length == 0) return "ltr";
+                      
+                            <br>return counted.reduce((a, b) => a.count > b.count ? a : b).name;
+                            <br>}
                     <br>console.log(dominantDirection("Hello!"));
                     <br>// → ltr
                     <br>console.log(dominantDirection("Hey, مساء الخير"));
