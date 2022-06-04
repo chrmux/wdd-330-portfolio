@@ -24,9 +24,48 @@
         <p>Right-click the page and click on “inspect,” go to console tab to see the output.</p>
         <ul>
             <li><strong>Code-1:</strong> Flatting</li>
+                <code class="code">
+                    let arrays = [[1, 2, 3], [4, 5], [6]];
+
+                    console.log(arrays.reduce((flat, current) => flat.concat(current), []));
+                </code>
             <li><strong>Code-2:</strong> Your own Loop</li>
+                <code class="code">
+                    function loop(start, test, update, body) {
+                        for (let value = start; test(value); value = update(value)) {
+                          body(value);
+                        }
+                      }
+                      
+                      loop(3, n => n > 0, n => n - 1, console.log);
+                </code>
             <li><strong>Code-3:</strong> Everything</li>
+                <code class="code">
+                    function every(array, predicate) {
+                        for (let element of array) {
+                          if (!predicate(element)) return false;
+                        }
+                        return true;
+                      }
+                      
+                      function every2(array, predicate) {
+                        return !array.some(element => !predicate(element));
+                      }
+                      
+                      console.log(every([1, 3, 5], n => n < 10));
+                      // → true
+                      console.log(every([2, 4, 16], n => n < 10));
+                      // → false
+                      console.log(every([], n => n < 10));
+                      // → true
+                </code>
             <li><strong>Code-4:</strong> Dominant writing direction</li>
+                <code class="code">
+                    console.log(dominantDirection("Hello!"));
+                    // → ltr
+                    console.log(dominantDirection("Hey, مساء الخير"));
+                    // → rtl
+                </code>
         </ul>
         <div class="home">
             <a href="https://chrmux.github.io/wdd-330-portfolio/index.html">Back to Home</a>
