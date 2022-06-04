@@ -1,5 +1,9 @@
 // Flatting
-let arrays = [[1, 2, 3], [4, 5], [6]];
+let arrays = [
+  [1, 2, 3],
+  [4, 5],
+  [6]
+];
 
 console.log(arrays.reduce((flat, current) => flat.concat(current), []));
 // → [1, 2, 3, 4, 5, 6]
@@ -43,7 +47,9 @@ function dominantDirection(text) {
   let counted = countBy(text, char => {
     let script = characterScript(char.codePointAt(0));
     return script ? script.direction : "none";
-  }).filter(({name}) => name != "none");
+  }).filter(({
+    name
+  }) => name != "none");
 
   if (counted.length == 0) return "ltr";
 
