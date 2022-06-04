@@ -2,14 +2,14 @@ li {
   padding-top: 10px;
   list-style: none;
 }
-div {
+.code {
   background-color: gray;
   border: none;
   width: 60%;
   height: 120px;
   padding-left: 40px;
 }
-p {
+.code > p {
   
   padding: 10px;
 }
