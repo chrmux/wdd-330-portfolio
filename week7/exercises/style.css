@@ -8,6 +8,7 @@ li {
   width: 60%;
   height: auto;
   padding-left: 40px;
+  border-radius: 10px;
 }
 .code > p {
   
