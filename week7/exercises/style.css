@@ -1,3 +1,9 @@
 li {
   padding-top: 15px;
 }
+.code {
+  background-color: gray;
+  border: none;
+  width: 480px;
+  height: 120px;
+}
