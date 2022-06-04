@@ -24,24 +24,24 @@
         <p>Right-click the page and click on “inspect,” go to console tab to see the output.</p>
         <ul>
             <li><strong>Code-1:</strong> Flatting</li>
-                <code class="code">
-                    let arrays = [[1, 2, 3], [4, 5], [6]];
+                <div class="code">
+                   <p> let arrays = [[1, 2, 3], [4, 5], [6]];
 
                     <br> console.log(arrays.reduce((flat, current) => flat.concat(current), []));
-                </code>
+                </p></div>
             <li><strong>Code-2:</strong> Your own Loop</li>
-                <code class="code">
-                    function loop(start, test, update, body) {
+                <div class="code">
+                   <p> function loop(start, test, update, body) {
                         <br>for (let value = start; test(value); value = update(value)) {
                             <br>body(value);
                             <br>}
                             <br>}
                       
                             <br>loop(3, n => n > 0, n => n - 1, console.log);
-                </code>
+                        </p></div>
             <li><strong>Code-3:</strong> Everything</li>
-                <code class="code">
-                    <br>function every(array, predicate) {
+                <div class="code">
+                   <p> function every(array, predicate) {
                         <br>for (let element of array) {
                             <br>if (!predicate(element)) return false;
                             <br>}
@@ -58,10 +58,10 @@
                                 <br>// → false
                                 <br>console.log(every([], n => n < 10));
                                 <br>// → true
-                </code>
+                </p></div>
             <li><strong>Code-4:</strong> Dominant writing direction</li>
-                <code class="code">
-                    function dominantDirection(text) {
+                <div class="code">
+                    <p>function dominantDirection(text) {
                         <br>let counted = countBy(text, char => {
                             <br>let script = characterScript(char.codePointAt(0));
                             <br>return script ? script.direction : "none";
@@ -75,7 +75,7 @@
                     <br>// → ltr
                     <br>console.log(dominantDirection("Hey, مساء الخير"));
                     <br>// → rtl
-                </code>
+                </p></div>
         </ul>
         <div class="home">
             <a href="https://chrmux.github.io/wdd-330-portfolio/index.html">Back to Home</a>
