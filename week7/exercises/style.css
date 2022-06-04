@@ -1,9 +1,11 @@
 li {
   padding-top: 10px;
+  list-style: none;
 }
 .code {
   background-color: gray;
   border: none;
-  width: 480px;
+  width: 70%;
   height: 120px;
+  padding: 20px;
 }
