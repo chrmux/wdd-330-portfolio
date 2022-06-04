@@ -5,6 +5,7 @@ li {
 .code {
   background-color: gray;
   border: none;
-  width: 60%;
-  height: 120px;
+  width: 520px;
+  height: auto;
+  padding-left: 40px;
 }
