@@ -2,10 +2,14 @@ li {
   padding-top: 10px;
   list-style: none;
 }
-div > p {
+div {
   background-color: gray;
   border: none;
   width: 60%;
   height: 120px;
   padding-left: 40px;
+}
+p {
+  
+  padding: 10px;
 }
