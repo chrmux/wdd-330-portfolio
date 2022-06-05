@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/984100b15b.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://chrmux.github.io/wdd-330-portfolio/css/style.css">
+    <link rel="stylesheet" href="https://chrmux.github.io/wdd-330-portfolio/week7/exercises/style.css">
+
+    <title>exercises | Week07</title>
+</head>
+
+<body>
+    <div id="theme" class="fa fa-moon"></div>
+    <header>
+        <h1>
+            Higher-Order Functions
+        </h1>
+    </header>
+    <main>
+        <p>Right-click the page and click on “inspect,” go to console tab to see the output.</p>
+        <ul>
+            <li><strong>Code-1:</strong> Flatting</li>
+                <div class="code">
+                   <p> let arrays = [[1, 2, 3], [4, 5], [6]];
+
+                    <br> console.log(arrays.reduce((flat, current) => flat.concat(current), []));
+                </p></div>
+            <li><strong>Code-2:</strong> Your own Loop</li>
+                <div class="code">
+                   <p> function loop(start, test, update, body) {
+                        <br>for (let value = start; test(value); value = update(value)) {
+                            <br>body(value);
+                            <br>}
+                            <br>}
+                      
+                            <br>loop(3, n => n > 0, n => n - 1, console.log);
+                        </p></div>
+            <li><strong>Code-3:</strong> Everything</li>
+                <div class="code">
+                   <p> function every(array, predicate) {
+                        <br>for (let element of array) {
+                            <br>if (!predicate(element)) return false;
+                            <br>}
+                            <br>return true;
+                            <br>}
+                      
+                            <br>function every2(array, predicate) {
+                                <br>return !array.some(element => !predicate(element));
+                                <br>}
+                      
+                                <br>console.log(every([1, 3, 5], n => n < 10));
+                                <br>// → true
+                                <br>console.log(every([2, 4, 16], n => n < 10));
+                                <br>// → false
+                                <br>console.log(every([], n => n < 10));
+                                <br>// → true
+                </p></div>
+            <li><strong>Code-4:</strong> Dominant writing direction</li>
+                <div class="code">
+                    <p>function dominantDirection(text) {
+                        <br>let counted = countBy(text, char => {
+                            <br>let script = characterScript(char.codePointAt(0));
+                            <br>return script ? script.direction : "none";
+                            <br>}).filter(({name}) => name != "none");
+                      
+                            <br>if (counted.length == 0) return "ltr";
+                      
+                            <br>return counted.reduce((a, b) => a.count > b.count ? a : b).name;
+                            <br>}
+                    <br>console.log(dominantDirection("Hello!"));
+                    <br>// → ltr
+                    <br>console.log(dominantDirection("Hey, مساء الخير"));
+                    <br>// → rtl
+                </p></div>
+        </ul>
+        <div class="home">
+            <a href="https://chrmux.github.io/wdd-330-portfolio/index.html">Back to Home</a>
+        </div>
+    </main>
+    <footer>
+        <div class="copy">
+            <span>&copy 2022 - Jerry Marollano -</span>
+        </div>
+    </footer>
+    <script src="https://chrmux.github.io/wdd-330-portfolio/js/theme.js"></script>
+    <script src="https://chrmux.github.io/wdd-330-portfolio/week7/exercises/main.js"></script>
+
+</body>
+
+</html>
