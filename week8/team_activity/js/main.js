@@ -9,7 +9,7 @@ function getData(url) {
       previousUrl = data.previous
       renderObjects(data);
   })
-  .catch(err => console.error('There seems to be something wrong with the link: ', err));
+  .catch(err => console.error('Please make sure the Pokémon name or ID is typed correctly.', err));
 }
 
 function getNext() {
