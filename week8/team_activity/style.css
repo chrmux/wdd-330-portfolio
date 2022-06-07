@@ -1,52 +1,25 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
-
-body {
-  font-family: Montserrat, sans-serif;
+h1 {
+  color: red;
 }
-main {
+#pokemon {
   display: flex;
-  flex-flow: column wrap;
+  flex-direction: column;
+  justify-content: auto;
+  align-content: auto;
 }
-
-.hidden {
-  display: none;
-}
-
-#shiplist td {
-  cursor: pointer;
-}
-
-#detailsbox {
-  flex: 1 0 15em;
-  padding: 1em;
-  text-align: center;
-  border: 2px solid;
-}
-
-#detailsbox dl {
-  border: 1px solid;
-  text-align: left;
-}
-
-#shiplist {
-  /* display: flex; */
-  flex-flow: row wrap;
+ul {
+  display: flex;
   list-style-type: none;
+  flex-direction: column;
+  justify-content: space-between;
+
+  
+}
+ul li {
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-#shiplist thead {
-  background-color: lightgray;
-}
-
-#shiplist tr {
-  border: 1px solid;
-  padding: 0.5em;
-  height: 44px;
-}
-#shiplist tr:nth-child(even) {
-  background-color: azure;
-}
-#shiplist tr:hover {
-  background-color: bisque;
-  text-decoration: underline;
+button {
+  margin-top: 10px;
+  width: 100px;
 }

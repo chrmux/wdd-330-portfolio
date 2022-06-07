@@ -1,82 +1,143 @@
-//helper function to fetch the data from an external source and return it in JSON format
-async function getJSON(url) {
-  try {
-    const response = await fetch(url);
-    if (!response.ok) {
-      throw Error(response.statusText);
-    } else {
-      const fetchJson = await response.json();
-      return fetchJson;
-    }
-  } catch (error) {
-    console.log(error);
-  }
-}
-// model code...it is a bit redundant in this case...we could just call getJSON directly...but if our model became more complex this sets us up to accomodate that.
-function getShips(url) {
-  return getJSON(url);
-}
-//  View code
-function renderShipList(ships, shipListElement) {
-  // I decided to use a table to display my list of ships. The shipList Element is that table and it has 2 children: thead and tbody...we need to put our ships into tbody...so I reference the second child.
-  const list = shipListElement.children[1];
-  list.innerHTML = "";
-  //loop through the ships
-  ships.forEach(function (ship) {
-    //console.log(ship);
-    //create elements for list...tr
-    let listItem = document.createElement("tr");
-    listItem.innerHTML = `
-        <td><a href="${ship.url}">${ship.name}</a></td>
-        <td>${ship.length}</td>
-        <td>${ship.crew}</td>
-        `;
+const pokeAPI = "https://pokeapi.co/api/v2/pokemon";
 
-    listItem.addEventListener("click", function (event) {
-      //when clicked the default link behavior should be stopped, and the ship details function should be called...passing the value of the href attribute in
-      event.preventDefault();
-      getShipDetails(ship.url);
+async function getPokemon(url) {
+
+fetch(url)
+.then(response => response.json())
+.then(json => {
+    displayData(json);
+    editNextPrev(json);
+ })
+.catch(error => console.log("Error: " + error))
+
+} 
+
+
+function editNextPrev(res) {
+    console.log(res);
+    if (res.previous != null) {
+        const prev = res.previous;
+        let prevButton = document.getElementById('previous');
+        prevButton.onclick = function() {getPokemon(prev)};
+    }
+    if (res.next != null) {
+        const next = res.next;
+        let nextButton = document.getElementById('next');
+        nextButton.onclick = function() {getPokemon(next)};
+    }
+}
+
+function displayData(res) {
+    const array = res.results;
+    const pokemonList = document.querySelector('#pokedex');
+    pokemonList.innerHTML = "";
+    array.forEach(element => {
+        let item = document.createElement('li');
+        let name = document.createElement('h3');
+        let button = document.createElement('button');
+        button.id = element.name;
+        button.addEventListener('click', function() {getDetails(this.id, pokeAPI)}, false);
+        button.button = element.url;
+        name.innerText = element.name;
+        button.appendChild(name);
+        item.appendChild(button);
+        pokemonList.appendChild(item);
     });
 
-    //add the list item to the list
-    list.appendChild(listItem);
-  });
-}
-// need to write the code to render the details to HTML
-function renderShipDetails(shipData) {
-  console.log(shipData);
+    function getDetails(id, url) {
+        fetch(url + "/" + id)
+        .then(console.log(url + "/" + id));
+    }
+    
 }
 
-// controller code
-async function showShips(url = "https://swapi.dev/api/starships/") {
-  const results = await getShips(url);
-
-  //get the list element
-  const shipListElement = document.getElementById("shiplist");
-  renderShipList(results.results, shipListElement);
-
-  // enable the next and prev buttons.
-  if (results.next) {
-    const next = document.getElementById("next");
-    // normally we would prefer the addEventListener method of adding a listener. Using something like 'element.onEvent = event_function' has the limitation of only being able to hold one listener of the type. In this case that is a good thing however. Because we are not re-creating the buttons each time we load a new batch of data we could end up with several listeners attached to each button by the last page. We won't have that issue here.
-    next.ontouchend = () => {
-      // notice to show the next page we just re-call the showShips function with a new URL
-      showShips(data.next);
-    };
+const getPokemonDetails = (url, listUrl) => {
+  while (container.firstChild) {
+    container.removeChild(container.firstChild);
   }
-  if (results.previous) {
-    const prev = document.getElementById("prev");
-    // we need to set the once option on the listener since the buttons do not get recreated with each page load. If we don't we will end up with several listeners all trying to fire at once after a few pages
-    prev.ontouchend = () => {
-      showShips(data.previous);
-    };
+  
+  document.getElementById('prev').onclick = () => {
+    return false;
   }
+  
+  document.getElementById('next').onclick = () => {
+    return false;
+  }
+  
+  fetch(url)
+       .then( (response) => {
+          const data = response.data;
+    
+          const nameDiv = document.createElement('div');
+          
+          nameDiv.appendChild(
+            document.createTextNode(data.species.name)
+          );
+          nameDiv.className = 'pokeName';
+          container.appendChild(nameDiv);
+    
+          const img = document.createElement('img');
+    
+          img.src = data.sprites.front_default;
+          img.className = 'pokePic';
+          container.appendChild(img);
+    
+          const statsDiv = document.createElement('div');
+    
+          statsDiv.className = 'stats';
+          statsDiv.appendChild(
+            document.createTextNode("Height: " + data.height + " || Weight: " + data.weight)
+          );
+          container.appendChild(statsDiv);
+    
+          const button = document.createElement('div');
+    
+          button.className = 'back';
+          button.appendChild(
+            document.createTextNode("Back")
+          );
+          button.onclick = () => { getPokemonList(listUrl) };
+          container.appendChild(button);
+       })
+       .catch( (error) => {
+          throw error;
+       });
 }
 
-async function getShipDetails(url) {
-  //call getJSON functions for the provided url
-  const ship = await getShips(url);
-  renderShipDetails(ship);
-  //with the results populate the elements in the #detailsbox
+const getPokemonList = (url) => {
+  while (container.firstChild) {
+    container.removeChild(container.firstChild);
+  }
+  
+  fetch(url)
+       .then( (response) => {
+          const data = response.data.results;
+          const prev = response.data.previous;
+          const next = response.data.next;
+    
+          data.map( (pokemon) => {
+            const div = document.createElement('div');
+            const text = document.createTextNode(pokemon.name);
+            
+            div.appendChild(text);
+            div.className += 'pokeList';
+            div.onclick = () => { getPokemonDetails(pokemon.url, url); };
+            container.appendChild(div);
+          });
+    
+          if (prev) {
+            document.getElementById('prev').onclick = () => {
+              getPokemonList(prev);
+            }
+          }
+    
+          if (next) {
+            document.getElementById('next').onclick = () => {
+              getPokemonList(next);
+            }
+          }
+       })
+       .catch( (error) => {
+          throw error;
+       });
 }
-showShips();

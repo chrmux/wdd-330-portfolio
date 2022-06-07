@@ -8,7 +8,7 @@
     <script src="https://kit.fontawesome.com/984100b15b.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://chrmux.github.io/wdd-330-portfolio/css/style.css">
-    <link rel="stylesheet" href="https://chrmux.github.io/wdd-330-portfolio/week8/team_activity/style.css">
+    <link rel="stylesheet" href="/week8/team_activity/style.css">
 
     <title>Team Activity | Grate Hikes</title>
 </head>
@@ -22,33 +22,19 @@
           </h1>
     </header>
     <main>
-            <div class="listbox">
-              <table id="shiplist">
-                <thead>
-                  <tr>
-                    <th>Name</th>
-                    <th>Length</th>
-                    <th>Crew</th>
-                  </tr>
-                </thead>
-      
-                <tbody></tbody>
-              </table>
-      
-              <a id="prev" href="#">&lt;-Prev</a> <a id="next" href="#">Next -&gt;</a>
-            </div>
-            <div id="detailsbox" class="hidden">
-              <dl>
-                <dt>Name:</dt>
-                <dd class="name"></dd>
-                <dt>Model:</dt>
-                <dd class="model"></dd>
-                <dt>Class:</dt>
-                <dd class="class"></dd>
-                <dt>*Movies:</dt>
-                <dd class="movies"></dd>
-              </dl>
-            </div>
+      <section>
+        <h2>Team Activity 08</h2>
+        <table id="star-wars-people">
+          <tr>
+            <th>Name</th>
+            <th>Height</th>
+            <th>Eye Color</th>
+          </tr>
+        </table>
+        <button onclick="getPrev()">Previous</button>
+        <button onclick="getNext()">Next</button>
+      </section>
+    </main>
     </main>
     <footer>
         <div class="copy">
@@ -56,7 +42,7 @@
         </div>
     </footer>
     <script src="https://chrmux.github.io/wdd-330-portfolio/js/theme.js"></script>
-    <script src="https://chrmux.github.io/wdd-330-portfolio/week8/team_activity/js/swapi-promises.js" type="module"></script>
+    <script src="/week8/team_activity/js/main.js" type="module"></script>
 
 
 </body>
