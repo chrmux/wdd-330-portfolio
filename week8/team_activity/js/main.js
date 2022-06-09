@@ -1,47 +1,52 @@
-let previousUrl = 'https://swapi.dev/api/people/'
-let nextUrl = ''
+const pokemonAPI = "https://pokeapi.co/api/v2/pokemon";
 
-function getData(url) {
-  return fetch(url)
-  .then(response => response.json())
-  .then(data => {
-      nextUrl = data.next
-      previousUrl = data.previous
-      renderObjects(data);
-  })
-  .catch(err => console.error('Please make sure the Pokémon name or ID is typed correctly.', err));
+async function getPokemon(url) {
+
+fetch(url)
+.then(response => response.json())
+.then(json => {
+    displayData(json);
+    editNextPrev(json);
+ })
+.catch(error => console.log("Error: " + error))
+
+} 
+
+
+function editNextPrev(res) {
+    console.log(res);
+    if (res.previous != null) {
+        const prev = res.previous;
+        let prevButton = document.getElementById('previous');
+        prevButton.onclick = function() {getPokemon(prev)};
+    }
+    if (res.next != null) {
+        const next = res.next;
+        let nextButton = document.getElementById('next');
+        nextButton.onclick = function() {getPokemon(next)};
+    }
 }
 
-function getNext() {
-    getData(nextUrl)
+function displayData(res) {
+    const array = res.results;
+    const pokemonList = document.querySelector('#pokemonList');
+    pokemonList.innerHTML = "";
+    array.forEach(element => {
+        let item = document.createElement('li');
+        let name = document.createElement('h3');
+        let button = document.createElement('button');
+        button.id = element.name;
+        button.addEventListener('click', function() {getDetails(this.id, pokemonAPI)}, false);
+        button.button = element.url;
+        name.innerText = element.name;
+        button.appendChild(name);
+        item.appendChild(button);
+        pokemonList.appendChild(item);
+    });
+
+    function getDetails(id, url) {
+        fetch(url + "/" + id)
+        .then(console.log(url + "/" + id));
+    }
+    
 }
-
-function getPrev() {
-    getData(previousUrl)
-}
-
-function renderObjects(data) {
-    let table = document.getElementById('star-wars-people');
-    table.innerHTML = `
-    <tr>
-      <th>Name</th>
-      <th>Height</th>
-      <th>Eye Color</th>
-    </tr>`
-    data.results.forEach(person => {
-        let row = document.createElement('tr')
-        let name = document.createElement('td')
-        let height = document.createElement('td')
-        let eye = document.createElement('td')
-        name.innerText = person.name;
-        height.innerText = person.height;
-        eye.innerText = person.eye_color;
-        row.appendChild(name);
-        row.appendChild(height);
-        row.appendChild(eye);
-        table.appendChild(row);
-    })
-
-}
-
-getData(previousUrl);
