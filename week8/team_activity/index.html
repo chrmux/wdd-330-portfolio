@@ -22,18 +22,39 @@
           </h1>
     </header>
     <main>
-        <div id="pokemon">
-            <h2>Pokemon</h2>
-            <ul id="pokemonList">
+        <div id="">
+            <h2>Swapi</h2>
+            <ul id="Swapi List">
             </ul>
-
-            <input type="text" id="selectedPokemon" placeholder="PokeMon Name">
-            <button id="request" onclick="getPokemon('https://pokeapi.co/api/v2/pokemon')">Click for request</button>
-    <div id="buttons">
-        <button id="previous" onclick="">Previous</button>
-        <button id="next" onclick="">Next</button>
-    </div>
+    
+           
+            <button id="request" onclick="getSwapi('https://pokeapi.co/api/v2/pokemon')">Click for request</button>
+            <div id="buttons">
+    
+          <!--<button id="previous" onclick="previous()">Previous</button>
+            <button id="next" onclick="next()">Next</button>-->
         </div>
+        <table id="listPeople"></table>
+    
+        <table>
+            <tr>
+              <th>Name</th>
+              <th>ID</th>
+              <th>Type</th>
+            </tr>
+            <tr>
+              <td id="name"></td>
+              <td id="birthday"></td>
+              <td id="height"></td>
+            </tr>
+           
+            </table>
+            <div class="pagination">
+                <a href="#" onclick="previous()">&laquo;</a>
+                <span id="pages"></span>
+                <a href="#" onclick="next()">&raquo;</a>
+              </div>
+        <ul role="list" id="list" class="list-pokemon"></ul>
         
     </main>
     <footer>
