@@ -1,86 +1,86 @@
-//helper function to fetch the data from an external source and return it in JSON format
-function getJSON(url) {
-  return fetch(url)
-    .then(function (response) {
-      if (!response.ok) {
-        throw Error(response.statusText);
-      } else {
-        return response.json();
-      }
+//fetch('https://example.com', {
+// credentials: 'include'
+//});
+
+//sync function postData(url = 'https://swapi.dev/api/people', data = {}) {
+// Default options are marked with *
+//const response = await fetch(url, {
+//method: 'POST', // *GET, POST, PUT, DELETE, etc.
+let nextUrl = null;
+let previousUrl = null;
+let pageCount = null;
+async function getSwapi(url) {
+  if (url === null) {
+    return;
+  }
+
+  fetch(url)
+    .then(response => response.json())
+    .then(json => {
+      //displayData(json);
+      //editNextPrev(json);
+      pageCount = json.count / 114;
+      pageCount = Math.ceil(pageCount);
+      displayPagination();
+
+      // console.log(json);
+      nextUrl = json.next;
+      previousUrl = json.previous;
+      display(json.results)
     })
-    .catch(function (error) {
-      console.log(error);
-    });
-}
-// model code...it is a bit redundant in this case...we could just call getJSON directly...but if our model became more complex this sets us up to accomodate that.
-function getShips(url) {
-  return getJSON(url);
-}
-//  View code
-function renderShipList(ships, shipListElement) {
-  // I decided to use a table to display my list of ships. The shipList Element is that table and it has 2 children: thead and tbody...we need to put our ships into tbody...so I reference the second child.
-  const list = shipListElement.children[1];
-  list.innerHTML = "";
-  //loop through the ships
-  ships.forEach(function (ship) {
-    //console.log(ship);
-    //create elements for list...tr
-    let listItem = document.createElement("tr");
-    listItem.innerHTML = `
-        <td><a href="${ship.url}">${ship.name}</a></td>
-        <td>${ship.length}</td>
-        <td>${ship.crew}</td>
-        `;
+    .catch(error => console.log("Error: " + error))
 
-    listItem.addEventListener("click", function (event) {
-      //when clicked the default link behavior should be stopped, and the ship details function should be called...passing the value of the href attribute in
-      event.preventDefault();
-      getShipDetails(ship.url);
+}
+//create list of people display function people
+//createElement(tagName)
+// createElement(tagName, options)
+function display(people) {
+  let table = document.getElementById("listPeople");
+  table.innerHTML = '';
+  for (let i = 0; i < people.length; i++) {
+    let pokemon = people[i];
+    let row = document.createElement('tr');
+    let cell = document.createElement('td');
+    cell.innerHTML = pokemon.name;
+    row.appendChild(cell);
+    row.addEventListener('click', event => {
+      displayDetails(pokemon);
     });
 
-    //add the list item to the list
-    list.appendChild(listItem);
-  });
+    table.appendChild(row);
+  }
 }
-// need to write the code to render the details to HTML
-function renderShipDetails(shipData) {
-  console.log(shipData);
-}
-
-// controller code
-function showShips(url = "https://swapi.dev/api/starships/") {
-  getShips(url).then(function (data) {
-    console.log(data);
-    const results = data.results;
-
-    //get the list element
-    const shipListElement = document.getElementById("shiplist");
-    renderShipList(results, shipListElement);
-
-    // enable the next and prev buttons.
-    if (data.next) {
-      const next = document.getElementById("next");
-      // normally we would prefer the addEventListener method of adding a listener. Using something like 'element.onEvent = event_function' has the limitation of only being able to hold one listener of the type we choose. In this case that is a good thing however. Because we are not re-creating the buttons each time we load a new batch of data we could end up with several listeners attached to each button by the last page. We won't have that issue here.
-      next.ontouchend = () => {
-        // notice to show the next page we just re-call the showShips function with a new URL
-        showShips(data.next);
-      };
-    }
-    if (data.previous) {
-      const prev = document.getElementById("prev");
-
-      prev.ontouchend = () => {
-        showShips(data.previous);
-      };
-    }
-  });
+//next to get the new data 
+function next() {
+  getSwapi(nextUrl);
 }
 
-function getShipDetails(url) {
-  //call getJSON functions for the provided url
-  getShips(url).then(function (data) {
-    renderShipDetails(data);
-    //with the results populate the elements in the #detailsbox
-  });
+function previous() {
+  getSwapi(previousUrl);
 }
-showShips();
+
+function displayDetails(details) {
+  //console.log(details);
+  document.getElementById("name").innerHTML = details.name;
+  document.getElementById("birthday").innerHTML = details.type;
+  document.getElementById("height").innerHTML = details.img ;
+}
+
+function displayPagination() {
+  let span = document.getElementById('pages');
+  span.innerHTML = '';
+  for (let i = 0; i < pageCount; i++) {
+    let a = document.createElement('a');
+    let page = i + 1;
+    a.innerHTML = page;
+    a.addEventListener('click', event => {
+      loadPage(page);
+    });
+    span.appendChild(a);
+  }
+}
+
+function loadPage(page) {
+  let url = "https://pokeapi.co/api/v2/pokemon/?limit=20&offset=60" + page;
+  getSwapi(url);
+}

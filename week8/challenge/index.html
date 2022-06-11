@@ -9,7 +9,7 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://chrmux.github.io/wdd-330-portfolio/css/style.css">
     <link rel="stylesheet" href="https://chrmux.github.io/wdd-330-portfolio/week4/team_activity/style.css">
-    <link rel="stylesheet" href="https://chrmux.github.io/wdd-330-portfolio/week5/challenge/style.css">
+    <link rel="stylesheet" href="/week8/challenge/style.css">
     <title>exercises | Week05-Week06</title>
 </head>
 
@@ -19,26 +19,42 @@
         <h1>
             Challange One: To-Do!
         </h1>
-    </header>
-    <main>
-        <div class="container">
-            <div id="err"></div>
-            <div class="entry">
-                <input type="text" name="Todo Entry" id="todoEntry" placeholder="Add a Task Here!"><button onclick="addTodo()">+ADD</button>
-            </div>
-            <div class="todoList">
-            </div>
-            <div class="footerContainer">
-                <div class="count">
-                <div class="actionBtns">
-                    <button class="actionButton" onclick="startUp()">All</button>
-                    <button class="actionButton" onclick="activeTodos()">Active</button>
-                    <button class="actionButton" onclick="completedTodos()">Completed</button>
+    </header>  
+      
+      <main>
+          <div id="">
+              <h2>Swapi</h2>
+              <ul id="Swapi List">
+              </ul>
+      
+             
+              <button id="request" onclick="getSwapi('https://pokeapi.co/api/v2/pokemon')">Click for request</button>
+              <div id="buttons">
+      
+            <!--<button id="previous" onclick="previous()">Previous</button>
+              <button id="next" onclick="next()">Next</button>-->
+          </div>
+          <table id="listPeople"></table>
+      
+          <table>
+              <tr>
+                <th>Name</th>
+                <th>ID</th>
+                <th>Type</th>
+              </tr>
+              <tr>
+                <td id="name"></td>
+                <td id="birthday"></td>
+                <td id="height"></td>
+              </tr>
+             
+              </table>
+              <div class="pagination">
+                  <a href="#" onclick="previous()">&laquo;</a>
+                  <span id="pages"></span>
+                  <a href="#" onclick="next()">&raquo;</a>
                 </div>
-                </div>
-            </div>
-            
-        </div>
+      
         <div class="home">
             <a href="https://chrmux.github.io/wdd-330-portfolio/index.html">Back to Home</a>
         </div>
@@ -49,8 +65,7 @@
         </div>
     </footer>
     <script src="https://chrmux.github.io/wdd-330-portfolio/js/theme.js"></script>
-    <script src="https://chrmux.github.io/wdd-330-portfolio/week5/challenge/index.js"></script>
-
+    <script src="/week8/challenge/index.js"></script>
 
 </body>
 
