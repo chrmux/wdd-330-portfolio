@@ -22,7 +22,11 @@ async function getSwapi(url) {
       pageCount = json.count / 114;
       pageCount = Math.ceil(pageCount);
       displayPagination();
-
+      pokemon = json.results.map((data, index) => ({
+        name: data.name,
+        id: index + 1,
+        image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index +
+          1}.png`,}));
       // console.log(json);
       nextUrl = json.next;
       previousUrl = json.previous;
@@ -64,7 +68,14 @@ function displayDetails(details) {
   document.getElementById("name").innerHTML = details.name;
   document.getElementById("birthday").innerHTML = details.type;
   document.getElementById("height").innerHTML = details.img ;
-}
+    const pokemonHTMLString = pokemon
+      .map(
+        pokeman =>
+          ` <li class="card"> <img class="card-image" src="${pokeman.image}"/> <h2 class="card-title">${pokeman.id}. ${pokeman.name}</h2> </a> </li> `
+      )
+      .join("");
+    pokedex.innerHTML = pokemonHTMLString;
+  };
 
 function displayPagination() {
   let span = document.getElementById('pages');
