@@ -67,15 +67,8 @@ function displayDetails(details) {
   //console.log(details);
   document.getElementById("name").innerHTML = details.name;
   document.getElementById("birthday").innerHTML = details.type;
-  document.getElementById("height").innerHTML = details.img ;
-    const pokemonHTMLString = pokemon
-      .map(
-        pokeman =>
-          ` <li class="card"> <img class="card-image" src="${pokeman.image}"/> <h2 class="card-title">${pokeman.id}. ${pokeman.name}</h2> </a> </li> `
-      )
-      .join("");
-    pokedex.innerHTML = pokemonHTMLString;
-  };
+  document.getElementById("height").innerHTML = details.image ;
+  }
 
 function displayPagination() {
   let span = document.getElementById('pages');
