@@ -1,0 +1,41 @@
+img {
+  max-width: 40%;
+  height: 180px;
+  float: left;
+}
+.hikeStyles{
+    width:85%;
+    height:800px;
+}
+h2 {
+  text-align: center;
+  background-color: aqua;
+  border: solid black ;
+}
+.details{
+    margin: 10px;
+}
+
+ul li {
+  list-style: none;
+
+}
+
+
+  #comments {
+        padding: 0.5em;
+      }
+      .addComment > h2 {
+        text-align: center;
+        background-color: tomato;
+      }
+      .addComment input {
+        width: 93%;
+        border: 1px solid;
+        font-size: 1.2em;
+      }
+      .addComment button {
+        padding: 0.5em;
+        border: 1px solid;
+      }
+
