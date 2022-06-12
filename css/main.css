@@ -3,9 +3,12 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
-    width: 100%;
     background-color: white;
     color: black;
+}
+
+main {
+    display: flex;
 }
 
 .active {
@@ -56,26 +59,61 @@ p {
     padding-left: 40px;
 }
 
-ol{
-    padding-left: 100px;
+ul li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+li a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    text-decoration-line: none;
+    color: black;
+
 }
 
 li {
+    padding: 10px;
+    margin: 20px;
     color: #000;
-    margin-left: 30px;
+    border-radius: 5px;
+    background-color: lightgray;
+    border: 1px solid gray;
+    cursor: pointer;
+}
+
+li:hover {
+    background-color: white;
+}
+
+a {
+    -webkit-transition-duration: 1s;
+    -moz-transition-duration: 1s;
+    -o-transition-duration: 1s;
+     transition-duration: 1s;
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    -o-transition-property: -o-transform;
+     transition-property: transform;
+}
+
+a:hover {
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+     transform: rotate(45deg);
 }
 
 strong {
     padding-top: 10px;
     padding-left: 40px;
 }
-main{
-    padding: 10px;
-}
+
 
 .home a {
-    display: block;
-    text-align: center;
     text-decoration: none;
     margin-top: 100px;
 }
