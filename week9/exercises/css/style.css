@@ -1,0 +1,17 @@
+li {
+  padding-top: 10px;
+  list-style: none;
+}
+
+button {
+  margin-left: 20px;
+  padding: 10px;
+}
+
+#square {
+    margin: 100px;
+    width: 100px;
+    height: 100px;
+    background: #d16;
+}
+
