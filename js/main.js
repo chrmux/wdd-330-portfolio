@@ -27,57 +27,57 @@ for (var i = 0; i < links.length; i++){
       {
           descriptor: "Week",
           weekNo: "01",
-          url: "https://chrmux.github.io/wdd-330-portfolio/week1/notes/index.html"
+          url: "/week1/notes/index.html"
       },
       {
           descriptor: "Week",
           weekNo: "02",
-          url: "https://chrmux.github.io/wdd-330-portfolio/week2/notes/index.html"
+          url: "/week2/notes/index.html"
       },
       {
           descriptor: "Week",
           weekNo: "03",
-          url: "https://chrmux.github.io/wdd-330-portfolio/week3/index.html"
+          url: "/week3/index.html"
       },
       {
           descriptor: "Week",
           weekNo: "04",
-          url: "https://chrmux.github.io/wdd-330-portfolio/week4/index.html"
+          url: "/week4/index.html"
       },
       {
           descriptor: "Week",
           weekNo: "05",
-          url: "https://chrmux.github.io/wdd-330-portfolio/week5/index.html"
+          url: "/week5/index.html"
       },
       {
           descriptor: "Week",
           weekNo: "06",
-          url: "https://chrmux.github.io/wdd-330-portfolio/week6/index.html"
+          url: "/week6/index.html"
       },
       {
           descriptor: "Week",
           weekNo: "07",
-          url: "https://chrmux.github.io/wdd-330-portfolio/week7/index.html"
+          url: "/week7/index.html"
       },
       {
           descriptor: "Week",
           weekNo: "08",
-          url: "https://chrmux.github.io/wdd-330-portfolio/week8/index.html"
+          url: "/week8/index.html"
       },
       {
           descriptor: "Week",
           weekNo: "09",
-          url: "https://chrmux.github.io/wdd-330-portfolio/week9/index.html"
+          url: "/week9/index.html"
       },
       {
           descriptor: "Week",
           weekNo: "10",
-          url: "/wk10/"
+          url: "/week10/index.html"
       },
       {
           descriptor: "FINAL",
           weekNo: "",
-          url: "/final/"
+          url: "/week14/index.html"
       }
   ];
   let links = document.getElementById("links");
@@ -96,7 +96,7 @@ for (var i = 0; i < links.length; i++){
           newlink.innerText = `${element.descriptor} ${element.weekNo}`;
       }
       else { newlink.innerText = element.descriptor; }
-      newlink.setAttribute('href', `/${directory}${element.url}`);
+      newlink.setAttribute('href', `${directory}${element.url}`);
       newli.appendChild(newlink);
       links.appendChild(newli);
   });
