@@ -1,3 +1,6 @@
+main {
+  height: 100vh;
+}
 .keys {
   display: flex;
   flex: 1;
