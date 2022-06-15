@@ -73,11 +73,11 @@ main{
     padding: 10px;
 }
 
-.home a {
-    display: block;
+.home{
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
     text-align: center;
-    text-decoration: none;
-    margin-top: 100px;
 }
 
 .temperature {
