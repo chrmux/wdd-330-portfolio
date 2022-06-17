@@ -124,6 +124,13 @@ strong {
     background-color: gray;
 }
 
+.copy{
+    text-align: center;
+    font-size: 18px;
+    padding: 10px;
+    
+}
+
 canvas {
     border:1px solid gray;
     background-color: #f1f1f1;
