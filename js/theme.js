@@ -9,3 +9,11 @@ theme.onclick = () => {
     document.body.classList.remove('active');
   }
 };
+
+function formatDate (date) {
+      let options = {month: 'long', day: '2-digit', year: 'numeric'}
+      return date.toLocaleDateString("en-US", options);
+  }
+
+  const dateModifiedEl = document.getElementById("dateModified");
+  dateModifiedEl.innerText = `Last Updated: ${formatDate(new Date(document.lastModified))}`;
