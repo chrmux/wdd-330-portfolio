@@ -264,8 +264,8 @@ const shipController = {
   getRandomShip() {
     // code to get a random ship here
   },
-  getShipsByPassengerCapacity(min, max) {
-    // returns a list of ships that can carry at least min passengers, but no more than max
+  getShipsByPassengerCapacity(min) {
+    return (min);// returns a list of ships that can carry at least min passengers, but no more than max
   }
 };
 

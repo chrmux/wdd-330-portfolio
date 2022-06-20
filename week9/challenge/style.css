@@ -1,98 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
-input {
-  border: 1px solid black;
-  border-radius: 0;
-  width: 100%;
-  padding: 10px;
-  margin-right: 10px;
-  font-size: 20px;
+:root {
+  /* change the values below to your colors from your palette */
+  --primary-color: #6495ED;
+  --secondary-color: green;
+  --accent1-color: rgb(26, 60, 64);
+  --accent2-color: white;
+
+  /* change the values below to your chosen font(s) */
+  --heading-font: "PT, Elsie";
+  --paragraph-font: Lato, Helvetica, sans-serif;
+
+  /* these colors below should be chosen from among your palette colors above */
+  --headline-color-on-white: black;  /* headlines on a white background */ 
+  --headline-color-on-color: white; /* headlines on a colored background */ 
+  --paragraph-color-on-white: black; /* paragraph text on a white background */ 
+  --paragraph-color-on-color: white; /* paragraph text on a colored background */ 
+  --paragraph-background-color: #6495ED;
+  --nav-link-color: white;
+  --nav-background-color: green;
+  --nav-hover-link-color: #E7C24F;
+  --nav-hover-background-color: green;
 }
 
-.container {
-  width: 70%;
+.colors {
+  width: 100%;
+  min-width: 350px;
   margin: auto;
-  border: 1px solid gray;
-  padding: 10px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
-  border-radius: 5px;
+  text-align: center;
+}
+.colors th {
+  background-color: #999;
+}
+.colors td{
+  width: 25%;
+  height: 3em;
 }
 
-.entry {
-  margin-top: 5%;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
+.primary {
+  background-color: var(--primary-color);
+}
+.secondary {
+  background-color: var(--secondary-color);
+}
+.accent1 {
+  background-color: var(--accent1-color);
+}
+.accent2{
+  background-color: var(--accent2-color);
 }
 
-.entry button {
-  width: 37%;
-  font-size: 20px;
-  color: black;
-  background-color: rgb(148, 221, 148);
-  border: solid 1px black;
-
+p.colored {
+  background-color: var(--paragraph-background-color);
+  color: var(--paragraph-color-on-color);
 }
 
-.todoEntry {
-  border: 1px solid gray;
-  border-bottom-right-radius: 3px solidgray;
-}
-
-.todoList {
-  width: 97%;
-}
-
-.todoItem {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
-  padding: 10px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border: solid 1px black;
-}
-
-.count {
-  line-height: 7px;
-}
-
-.footerContainer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-.actionBtns {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 7px;
-  margin: 10px;
-}
-
-.actionBtns button{
-  margin: 10px;
-  line-height: 7px;
-  padding: 7px;
-  font-size: 20px;
-}
-
-.iconFor {
-cursor: pointer;
-}
-
-.material-icons {
-  cursor: pointer;
-}
-
-.completed {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-#err {
-  display: flex;
-  justify-items: center;
-  justify-content: center;
-  align-items: center;
+li {
+  display: inline;
 }

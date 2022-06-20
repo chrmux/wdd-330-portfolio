@@ -14,6 +14,6 @@ function component() {
 
 document.body.appendChild(component());
 
-shipController.getShips().then((data) => {
-console.log(data);
- });
+// shipController.getShips().then((data) => {
+//   console.log(data);
+// });
