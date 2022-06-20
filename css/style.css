@@ -31,6 +31,12 @@ li.active {
         border-radius: 5px;
 }
 
+.container {
+    width: 100%;
+    height: auto;
+    margin-bottom: 100px;
+}
+
 header,
 footer{
     background-color: rgb(26, 60, 64);
@@ -53,11 +59,7 @@ h3 {
 }
 
 p {
-    padding-left: 30px;
-}
-
-ol{
-    padding-left: 100px;
+    padding: 30px;
 }
 
 li {
@@ -73,6 +75,7 @@ strong {
 
 .home{
     text-align: center;
+    padding-top: 20px;
     
 }
 
@@ -84,8 +87,15 @@ strong {
     text-align: center;
     font-size: 18px;
     padding: 10px;
-    
-    
+        
+}
+
+footer {
+    padding-top: 10px;
+    padding-bottom: 0px;
+    position:fixed;
+    bottom:0;
+    width:98.5%;
 }
 
 @media screen and (max-width: 512px) {
@@ -96,5 +106,8 @@ strong {
 
     #theme {
         font-size: 65%;
+    }
+    footer{
+        width: 95%;
     }
 }
