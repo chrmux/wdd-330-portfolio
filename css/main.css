@@ -14,6 +14,12 @@ main {
     display: flex;
 }
 
+.container {
+    width: 100%;
+    height: auto;
+    margin-bottom: 100px;
+}
+
 .active {
     background-color: gray;
     color: white;
@@ -37,12 +43,11 @@ li.active {
         border-radius: 5px;
 }
 
-header,
-footer{
+header {
     background-color: rgb(26, 60, 64);
     color: #fff;
     border: 10px solid green;
-    width: 100%;
+    width: 98.5%;
 }
 h1 {
     text-align: center;
@@ -102,7 +107,7 @@ li:hover {
     
 }
 
-a {
+li {
     -webkit-transition-duration: 1s;
     -moz-transition-duration: 1s;
     -o-transition-duration: 1s;
@@ -119,21 +124,6 @@ a:hover {
      transform: rotate(45deg);
 }
 
-strong {
-    padding-top: 10px;
-    padding-left: 40px;
-}
-
-
-.home a {
-    text-decoration: none;
-    margin-top: 100px;
-}
-
-.temperature {
-    background-color: gray;
-}
-
 .copy{
     text-align: center;
     font-size: 18px;
@@ -142,16 +132,14 @@ strong {
 }
 
 footer {
+    background-color: rgb(26, 60, 64);
+    color: #fff;
+    border: 10px solid green;
     padding-top: 10px;
     padding-bottom: 0px;
     position:fixed;
     bottom:0;
     width:98.5%;
-}
-
-canvas {
-    border:1px solid gray;
-    background-color: #f1f1f1;
 }
 
 @media screen and (max-width: 512px) {

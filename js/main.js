@@ -9,57 +9,57 @@
   const directory = "https://chrmux.github.io/wdd-330-portfolio"
   const pages = [
       {
-          descriptor: "Week",
+          description: "Week",
           weekNo: "01",
           url: "/week1/notes/index.html"
       },
       {
-          descriptor: "Week",
+          description: "Week",
           weekNo: "02",
           url: "/week2/notes/index.html"
       },
       {
-          descriptor: "Week",
+          description: "Week",
           weekNo: "03",
           url: "/week3/index.html"
       },
       {
-          descriptor: "Week",
+          description: "Week",
           weekNo: "04",
           url: "/week4/index.html"
       },
       {
-          descriptor: "Week",
+          description: "Week",
           weekNo: "05",
           url: "/week5/index.html"
       },
       {
-          descriptor: "Week",
+          description: "Week",
           weekNo: "06",
           url: "/week6/index.html"
       },
       {
-          descriptor: "Week",
+          description: "Week",
           weekNo: "07",
           url: "/week7/index.html"
       },
       {
-          descriptor: "Week",
+          description: "Week",
           weekNo: "08",
           url: "/week8/index.html"
       },
       {
-          descriptor: "Week",
+          description: "Week",
           weekNo: "09",
           url: "/week9/index.html"
       },
       {
-          descriptor: "Week",
+          description: "Week",
           weekNo: "10",
           url: "/week10/index.html"
       },
       {
-          descriptor: "FINAL",
+          description: "FINAL",
           weekNo: "",
           url: "/week14/index.html"
       }
@@ -77,9 +77,9 @@
           newli.classList.add('active');
       }
       if (element.hasOwnProperty('weekNo')) {
-          newlink.innerText = `${element.descriptor} ${element.weekNo}`;
+          newlink.innerText = `${element.description} ${element.weekNo}`;
       }
-      else { newlink.innerText = element.descriptor; }
+      else { newlink.innerText = element.description; }
       newlink.setAttribute('href', `${directory}${element.url}`);
       newli.appendChild(newlink);
       links.appendChild(newli);
