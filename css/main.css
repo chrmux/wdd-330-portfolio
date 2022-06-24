@@ -16,7 +16,7 @@ main {
 
 .container {
     width: 100%;
-    height: auto;
+    height: 100%;
     margin-bottom: 100px;
 }
 
