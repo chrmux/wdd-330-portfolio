@@ -1,28 +1,22 @@
-
-export default class QuakesView {
+export default // Quake View handler
+class QuakesView {
   renderQuakeList(quakeList, listElement) {
-      console.log('This is the quakelist in renderQuakeList', quakeList);
-      listElement.innerText = '';
-      let liList = quakeList.features
+    listElement.innerHTML = quakeList.features
       .map(quake => {
-          let li = document.createElement('li');
-          li.setAttribute('data-id', quake.properties.id);
-          li.addEventListener('click', this.renderQuake.bind(this, quake, li))
-          li.innerText = `${quake.properties.title}, ${new Date(
-              quake.properties.time
-          )}`;
-          return li;
-      });
-      liList.forEach(li => {
-          listElement.appendChild(li);
-      });
+        return `<li data-id=${quake.id}>${quake.properties.title}, ${new Date(
+          quake.properties.time
+        )}</li>`;
+      })
+      .join('');
   }
   renderQuake(quake, element) {
-      const quakeProperties = Object.entries(quake.properties);
-      // console.log(`The quake properties for quake ${quake.properties.id}: `, quakeProperties);
-      element.innerHTML = quakeProperties.map(property => {
-          return `${property[0]}: ${property[1]}`
+    const quakeProperties = Object.entries(quake.properties);
+    element.innerHTML = quakeProperties
+      .map(item => {
+        if (item[0] === 'time' || item[0] === 'updated') {
+          return `<li>${item[0]}: ${new Date(item[1])}</li>`;
+        } else return `<li>${item[0]}: ${item[1]}</li>`;
       })
-      .join('<br>');
+      .join('');
   }
 }
