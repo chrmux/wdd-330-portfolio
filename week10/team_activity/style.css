@@ -8,3 +8,8 @@
 .quakeStyles div {
   font-size: 0.8em;
 }
+
+button {
+  text-align: center;
+  padding-top: 20px;
+}
