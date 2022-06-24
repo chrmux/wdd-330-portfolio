@@ -8,7 +8,7 @@
     <script src="https://kit.fontawesome.com/984100b15b.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://chrmux.github.io/wdd-330-portfolio/css/style.css">
-    <link rel="stylesheet" href="https://chrmux.github.io/wdd-330-portfolio/week9/exercises/css/style.css">
+    <link rel="stylesheet" href="/week9/exercises/css/style.css">
 
     <title>exercises | Week07</title>
 </head>
@@ -22,17 +22,36 @@
     </header>
     <main>
 
-        <canvas id='canvas' width='400' height='400'></canvas>
+        <form name="login">
+            Username<input type="text" name="userid"/>
+            Password<input type="password" name="pswrd"/>
+            <input type="button" onclick="check(this.form)" value="Login"/>
+            <input type="reset" value="Cancel"/>
+            </form>
+
         <div class="home">
             <a href="https://chrmux.github.io/wdd-330-portfolio/index.html">Back to Home</a>
         </div>
+        <script>
+            function check(form)/*function to check userid & password*/
+{
+ /*the following code checkes whether the entered userid and password are matching*/
+ if(form.userid.value == "myuserid" && form.pswrd.value == "mypswrd")
+  {
+    window.open('target.html')/*opens the target page while Id & password matches*/
+  }
+ else
+ {
+   alert("Error Password or Username")/*displays error message*/
+  }
+}
+        </script>
     </main>
     <footer>
         <div class="copy">
             <span>&copy 2022 - Jerry Marollano -</span><span id="dateModified"></span>
         </div>
     </footer>
-    <script src="https://chrmux.github.io/wdd-330-portfolio/js/main.js"></script>
     <script src="https://chrmux.github.io/wdd-330-portfolio/js/theme.js"></script>
     <script src="https://chrmux.github.io/wdd-330-portfolio/week9/exercises/js/canvas.js"></script>
 

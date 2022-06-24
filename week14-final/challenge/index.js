@@ -1,174 +1,51 @@
-class TodoItem {
-    constructor(task) {
-        this.id = Date.now();
-        this.content = task;
-        this.completed = false;
-    }
-}
+// There are many ways to pick a DOM node; here we get the form itself and the email
+    // input box, as well as the span element into which we will place the error message.
+    const form  = document.getElementsByTagName('form')[0];
 
-function addTodo() {
-    var todoEntry = document.getElementById("todoEntry").value;
-    
-    if (todoEntry !== '') {
-        saveEntry(todoEntry);
-    } else {
+    const email = document.getElementById('mail');
+    const emailError = document.querySelector('#mail + span.error');
+
+    email.addEventListener('input', function (event) {
+      // Each time the user types something, we check if the
+      // form fields are valid.
+
+      if (email.validity.valid) {
+        // In case there is an error message visible, if the field
+        // is valid, we remove the error message.
+        emailError.innerHTML = ''; // Reset the content of the message
+        emailError.className = 'error'; // Reset the visual state of the message
+      } else {
+        // If there is still an error, show the correct error
         showError();
+      }
+    });
+
+    form.addEventListener('submit', function (event) {
+      // if the form contains valid data, we let it submit
+
+      if(!email.validity.valid) {
+        // If it isn't, we display an appropriate error message
+        showError();
+        // Then we prevent the form from being sent by canceling the event
+        event.preventDefault();
+      }
+    });
+
+    function showError() {
+      if(email.validity.valueMissing) {
+        // If the field is empty
+        // display the following error message.
+        emailError.textContent = 'You need to enter an e-mail address.';
+      } else if(email.validity.typeMismatch) {
+        // If the field doesn't contain an email address
+        // display the following error message.
+        emailError.textContent = 'Entered value needs to be an e-mail address.';
+      } else if(email.validity.tooShort) {
+        // If the data is too short
+        // display the following error message.
+        emailError.textContent = `Email should be at least ${ email.minLength } characters; you entered ${ email.value.length }.`;
+      }
+
+      // Set the styling appropriately
+      emailError.className = 'error active';
     }
-    document.getElementById("todoEntry").value = '';
-}
-
-function displayEntry(todo) {
-
-
-    var todoItemDiv = document.createElement('div');
-    todoItemDiv.setAttribute('class', 'todoItem');
-    todoItemDiv.setAttribute('id', todo.id)
-
-    var spanIconComplete = document.createElement("span");
-    spanIconComplete.setAttribute('class', 'material-icons');
-    spanIconComplete.innerHTML = "☐";
-    spanIconComplete.setAttribute("id", "iconFor"+todo.id)
-    spanIconComplete.myParam = todo.id;
-    
-    var taskDiv = document.createElement('div');
-    taskDiv.setAttribute('class', 'task');
-    taskDiv.innerText = todo.content;
-
-    var endBtn = document.createElement('span');
-    endBtn.setAttribute('class', 'material-icons');
-    endBtn.innerText = "delete";
-    endBtn.addEventListener('click', deleteTask, false);
-    endBtn.myParam = todo.id;
-    
-    if (todo.completed){
-        todoItemDiv.classList.add("completed");
-        spanIconComplete.innerHTML = "✔️";
-        
-
-    } else {
-        spanIconComplete.addEventListener('click', completeTask, false);
-    }
-
-    
-    todoItemDiv.appendChild(spanIconComplete);
-    todoItemDiv.appendChild(taskDiv);
-    todoItemDiv.appendChild(endBtn);
-
-    document.getElementsByClassName('todoList')[0].appendChild(todoItemDiv);
-
-}
-async function completeTask(evt) {
-
-    document.getElementById(evt.currentTarget.myParam).classList.add("completed");
-    document.getElementById("iconFor"+evt.currentTarget.myParam).innerText = "✔️";
-    var entries = await getEntries();
-    
-    var stutus = entries.findIndex(entry => entry.id === evt.currentTarget.myParam);
-    entries[stutus].completed = true
-
-  
-    localStorage.setItem('test', JSON.stringify(entries));
-}
-
-async function deleteTask(evt) {
-    document.getElementById(evt.currentTarget.myParam).remove();
-
-    var entries = await getEntries();
-    
-    var deleteable = entries.find(entry => entry.id === evt.currentTarget.myParam);
-
-
-    var updatedTasks = entries.filter(entry => entry !== deleteable);
-
-    localStorage.setItem('test', JSON.stringify(updatedTasks));
-}
-
-async function saveEntry(entry) {
-
-    var entries = await getEntries();
-
-    var todoEntry = new TodoItem(entry);
-
-    displayEntry(todoEntry, "all");
-    entries.push(todoEntry);
-    console.log(entries);
-
-    localStorage.setItem('test', JSON.stringify(entries));
-}
-
-async function getEntries() {
-    var entries = await JSON.parse(localStorage.getItem('test'));
-    if (entries !== null) {
-        return entries;
-    } else {
-        entries = [];
-        return entries;
-    }
-}
-
-async function startUp() {
-    document.getElementsByClassName('todoList')[0].innerHTML = '';
-
-    var todos = await getEntries();
-    
-    displayCount(todos.filter(item => item.completed === false).length);
-
-    if (todos !== null) {
-        todos.forEach(todo => {
-            displayEntry(todo);
-        });
-    } else {
-    }
-
-}
-
-function displayCount(count) {
-    var taskCount = document.getElementsByClassName('count');
-    taskCount.innerHTML = '';
-
-    if (count.length) {
-        taskCount.innerText = count + "📝 Task Left!"
-    } else {
-        taskCount.innerText = count + "📝 Tasks Left"
-
-    }
-   
-  }
-    
-
-function showError() {
-    document.getElementById('err').innerText = "Enter some text!"
-    setTimeout(function(){ document.getElementById('err').innerText = '' }, 3000);
-}
-
-
-async function activeTodos() {
-    document.getElementsByClassName('todoList')[0].innerHTML = '';
-    var todos = await getEntries();
-    displayCount(todos.filter(item => item.completed === false).length);
-
-    if (todos !== null) {
-        todos.filter(todo => todo.completed === false)
-        .forEach(todo => {
-            displayEntry(todo);
-        });
-    }
-}
-
-async function completedTodos() {
-    document.getElementsByClassName('todoList')[0].innerHTML = '';
-    var todos = await getEntries();
-    
-    displayCount(0);
-
-    if (todos !== null) {
-        todos.filter(todo => todo.completed === true)
-        .forEach(todo => {
-            displayEntry(todo);
-        });
-    }
-}
-
-
-
-startUp();

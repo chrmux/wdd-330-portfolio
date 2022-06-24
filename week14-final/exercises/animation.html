@@ -8,7 +8,7 @@
     <script src="https://kit.fontawesome.com/984100b15b.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://chrmux.github.io/wdd-330-portfolio/css/style.css">
-    <link rel="stylesheet" href="https://chrmux.github.io/wdd-330-portfolio/week9/exercises/css/animation.css">
+    <link rel="stylesheet" href="/week14-final/exercises/style.css">
 
     <title>exercises | Week07</title>
 </head>
@@ -17,30 +17,52 @@
     <div id="theme" class="fa fa-moon"></div>
     <header>
         <h1>
-            Animation
+            Final
         </h1>
     </header>
     <main>
-
-        <div id='square'></div>
-        <div class="box">
-            <p><button onclick="myMove()">Click Me</button></p>
-            <div id="container">
-                <div id="animate"></div>
-            </div>
-        </div>
+        <div class="container">
+        <div class="wrapper">
+            <h2>Pacing Guide</h2>
+            <p class="title">Activities<span class="time">Time</span></p>
+            <ul class="plates">
+              <li>Loading Guide...</li>
+            </ul>
+            <div class="display">
+                <p class="display__end-time"></p>
+              </div>
+            <form class="add-items">
+              <input type="text" name="item" placeholder="Item Name" required>
+              <input type="submit" value="+ Add Item">
+            
+</form>
+<div class="timer">
+    <div class="timer__controls">
+      <button data-time="20" class="timer__button">20 Secs</button>
+      <button data-time="300" class="timer__button">Work 5</button>
+      <button data-time="900" class="timer__button">Quick 15</button>
+      <button data-time="1200" class="timer__button">Snack 20</button>
+      <button data-time="3600" class="timer__button">Lunch Break</button>
+      <form name="customForm" id="custom">
+        <input type="text" name="minutes" placeholder="Enter Minutes">
+      </form>
+    </div>
+  </div>
+          
         <div class="home">
             <a href="https://chrmux.github.io/wdd-330-portfolio/index.html">Back to Home</a>
         </div>
+    </div>
     </main>
     <footer>
         <div class="copy">
             <span>&copy 2022 - Jerry Marollano -</span><span id="dateModified"></span>
         </div>
     </footer>
-    <script src="https://chrmux.github.io/wdd-330-portfolio/js/main.js"></script>
     <script src="https://chrmux.github.io/wdd-330-portfolio/js/theme.js"></script>
-    <script src="https://chrmux.github.io/wdd-330-portfolio/week9/exercises/js/animation.js"></script>
+    <script src="/week14-final/exercises/js/animation.js"></script>
+    <script src="/week14-final/exercises/js/canvas.js"></script>
+    <script src="/week14-final/exercises/js/window.js"></script>
 
 </body>
 
