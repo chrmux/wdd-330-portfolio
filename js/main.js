@@ -61,7 +61,7 @@
       {
           description: "FINAL",
           weekNo: "",
-          url: "/week14/index.html"
+          url: "/week14-final/team_activity/index.html"
       }
   ];
   let links = document.getElementById("links");
