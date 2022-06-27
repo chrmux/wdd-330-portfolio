@@ -25,7 +25,6 @@ const detail = (url) => {
     fetch(url)
       .then(response => response.json())
       .then(pokemon => {
-        document.getElementById('detail').innerHTML = ''
         document.getElementById('detail')
           .insertAdjacentHTML('beforeend', 
             `
