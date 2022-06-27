@@ -30,7 +30,7 @@ const detail = (url) => {
           .insertAdjacentHTML('beforeend', 
             `
               <h1>${pokemon.name}</h1>
-              <img src="${pokemon.sprites.front_default}" />
+              <li>${pokemon.type}</li>
             `
           )
       })
