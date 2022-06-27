@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/984100b15b.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/week10/exercises/css/style.css">
+
+    <title>exercises | Week07</title>
+</head>
+
+<body>
+    <div id="theme" class="fa fa-moon"></div>
+    <header>
+        <h1>
+            Create an Accunt
+        </h1>
+    </header>
+    <main>
+        <div class="containe">
+            <!-- The Modal (contains the Sign Up form) -->
+            <div id="id01" class="modal">
+                <span onclick="document.getElementById('id01').style.display='none'" class="close"
+                    title="Close Modal"></span>
+                <form class="modal-content" action="/action_page.php">
+                    <div class="field-area">
+                        <p>Please fill in this form to create an account.</p>
+                        <hr>
+
+                        <label for="name"><b>Name</b></label>
+                        <input type="text" placeholder="name" required>
+
+                        <label for="email"><b>Email</b></label>
+                        <input type="text" placeholder="Enter Email" name="email" required>
+
+                        <label for="psw"><b>Password</b></label>
+                        <input type="password" placeholder="Enter Password" name="psw" required>
+
+                        <label for="psw-repeat"><b>Repeat Password</b></label>
+                        <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+
+                        <label for="gender"><b>Gender</b></label>
+                        <select name="gender" id="text">
+                            <option  value="Male" >Male</option>
+                            <option value="Female" >
+                                female
+                            </option>
+                        </select>
+
+                        <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms &
+                                Privacy</a>.</p>
+
+                        <div class="clearfix">
+                            <button type="button" onclick="document.getElementById('id01').style.display='none'"
+                                class="cancelbtn">Cancel</button>
+                            <button type="submit" class="signup">Sign Up</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="home">
+            <a href="https://chrmux.github.io/wdd-330-portfolio/index.html">Back to Home</a>
+        </div>
+    </main>
+    <footer>
+        <div class="copy">
+            <span>&copy 2022 - Jerry Marollano -</span><span id="dateModified"></span>
+        </div>
+    </footer>
+    <script src="/js/theme.js"></script>
+    <script src="/week10/exercises/js/canvas.js"></script>
+
+</body>
+
+</html>
