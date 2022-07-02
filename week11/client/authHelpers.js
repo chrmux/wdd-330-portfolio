@@ -23,7 +23,7 @@ export class Errors {
       this.errorElement.classList.add('hidden');
     }
   }
-  const baseURL = 'http://127.0.0.1:3000/';
+  const baseURL = 'https://github.com/chrmux/wdd-330-portfolio/tree/main/week11/auth/json-server/database.json';
   // helper function to make an http request with fetch.
   // returns a promise to a json object
   export async function makeRequest(
