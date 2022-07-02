@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/984100b15b.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://chrmux.github.io/wdd-330-portfolio/css/style.css">
+
+    <title>WDD 330 Portfolio | Week11</title>
+</head>
+
+<body>
+    <div id="theme" class="fa fa-moon"></div>
+    <header>
+        <h1>
+            Auth Example App
+        </h1>
+    </header>
+    <main>
+        <div class="container">
+        <div id="errors" class="errors hidden"></div>
+    <div id="login">
+      <form>
+        <div>
+          <label for="username">Username</label>
+          <input
+            type="text"
+            class="form-control"
+            id="username"
+            placeholder="Username"
+            value="user1@email.com"
+          />
+        </div>
+        <div>
+          <label for="password">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            placeholder="Password"
+          />
+        </div>
+        <button type="button" class="btn btn-primary center-block">
+          Login
+        </button>
+      </form>
+      <div id="token-display"></div>
+    </div>
+
+    <div id="content" class="hidden">
+      <form name="postForm">
+        <div>
+          <label for="title">Title</label>
+          <input
+            type="text"
+            class="form-control"
+            name="title"
+            placeholder="title"
+            required
+          />
+        </div>
+        <div>
+          <label for="content">Content</label>
+          <input
+            type="text"
+            class="form-control"
+            name="content"
+            placeholder="content"
+            required
+          />
+        </div>
+        <div id="postError"></div>
+
+        <input type="submit" id="createSubmit" />
+      </form>
+      <ul id="list"></ul>
+    </div>
+    <div class="home">
+      <a href="https://chrmux.github.io/wdd-330-portfolio/index.html">Back to Home</a>
+  </div>
+</div>
+</main>
+<footer>
+  <div class="copy">
+      <span>&copy 2022 - Jerry Marollano - </span><span id="dateModified"></span>
+  </div>
+</footer>
+<script src="https://chrmux.github.io/wdd-330-portfolio/js/theme.js"></script>
+<script type="module" src="./week11.js"></script>
+
+</body>
+</html>
+<style>
+
+  .container {
+    padding: 20px;
+    width: 97%;
+  }
+  h2 {
+    text-align: center;
+  }
+
+  #login {
+    border: 1px solid gray;
+    width: 40%;
+    padding: 20px;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+    .errors {
+        border: 1px solid darkred;
+        background-color: lightcoral;
+        padding: 0.5em;
+      }
+      form input {
+        margin: 0.5em 0;
+        font-size: 1.4em;
+        background-color: antiquewhite;
+        width: 300px;
+      }
+      form button {
+        font-size: 1.2em;
+        padding: 0.4em;
+        background-color: cornflowerblue;
+      }
+      input:invalid {
+        box-shadow: 0 0 5px 1px red;
+      }
+      .hidden {
+        display: none;
+      }
+</style>
