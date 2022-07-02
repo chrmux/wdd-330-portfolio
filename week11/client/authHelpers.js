@@ -23,7 +23,7 @@ export class Errors {
       this.errorElement.classList.add('hidden');
     }
   }
-  const baseURL = 'https://github.com/chrmux/wdd-330-portfolio/tree/main/week11/auth/json-server/package.json';
+  const baseURL = 'git+https://github.com/chrmux/wdd-330-portfolio.git';
   // helper function to make an http request with fetch.
   // returns a promise to a json object
   export async function makeRequest(
