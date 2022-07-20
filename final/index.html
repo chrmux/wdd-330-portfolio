@@ -9,15 +9,27 @@
     <title>My Pacing Guide</title>
 </head>
 <body>
-    <div class="container mt-4">
+  <header>
+    <div class="row">
+      <div class="col-12 col-md-8">
+        <ul>
+          <li>Portfolio</li>
+          <li>Pacing Guide</li>
+        </ul></div>
+      <div class="col-6 col-md-4">
+        <li>Login</li>
+        <li>Register</li>
+      </div>
+    </div>
+  </header>
+      <div class="container mt-4">
         <h1 class="display-4 text-center">
           <i class="fas fa-book-open text-primary"></i> My<span class="text-primary">Pacing</span>Guide</h1>
           <table class="table table-striped mt-5">
             <thead>
               <tr>
                 <th>Activity</th>
-                <th>Start</th>
-                <th>End</th>
+                <th>Time</th>
                 <th></th>
               </tr>
             </thead>
@@ -29,17 +41,39 @@
               <label for="title">Activity</label>
               <input type="text" id="title" class="form-control">
             </div>
-            <div class="form-group">
-              <label for="author">Start</label>
-              <input type="text" id="author" class="form-control">
-            </div>
-            <div class="form-group">
-              <label for="isbn">End</label>
-              <input type="text" id="isbn" class="form-control">
-            </div>
-          </form>
+          </form>        
       </div>
+        <div class="timer" id="author">
+          <span class="timer__part timer__part--minuyes">00</span>
+          <span class="timer__part">:</span>
+          <span class="timer__part timer__part--second ">00</span>
+          <button type="button" class="timer__btn timer__btn--control timer__btn--start">
+              <span class="">play_arrow</span>
+          </button>
+          <button type="button" class="timer__btn timer__btn--reset">
+              <span class="">Timer</span>
+          </button>
+      </div>
+    </div>
+    <footer>
+      <div class="container">
+        <div class="row justify-content-md-center">
+          <div class="col col-lg-2">
+            @ COPY 2022 
+          </div>
+          <div class="col-md-auto">
+            -Jerry Marollano-
+          </div>
+          <div class="col col-lg-2">
+            WDD330
+          </div>
+        </div>
+        </div>
+    </footer>
+    
+      
           <script src="./index.js"></script>
+
 
 </body>
 </html>

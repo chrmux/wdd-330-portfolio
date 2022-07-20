@@ -17,10 +17,10 @@ else
 
     var location = '';
     if (iName=='love' && AccId=='cat') {
-        location=("/week14-final/page1.html");
+        location=("/week14-final/pages/page1.html");
     }
     else if (iName=='mom' && AccId=='love') {
-        location=("/week14-final/page2.html");
+        location=("/week14-final/pages/page2.html");
     }
     else alert('Wrong pair');
     

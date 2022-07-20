@@ -1,5 +1,12 @@
-export const Home = () => {
-    return <div className="form-signin mt-5 text-center">
-        <h3>Hello</h3>
-    </div>
+import * as React from "react";
+import { View, Text } from "react-dom";
+import { Link } from "react-router-dom";
+
+function Home() {
+  return (
+    <View>
+      <Text>Welcome!</Text>
+      <Link to="/profile">Visit your profile</Link>
+    </View>
+  );
 }
